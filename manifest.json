@@ -2,7 +2,7 @@
   "name": "AdminFilePro",
   "short_name": "FilePro",
   "description": "Gestione professionale debiti agenzie",
-  "start_url": ".",
+  "start_url": "/AdminFilePro/",
   "display": "standalone",
   "background_color": "#f2f2f7",
   "theme_color": "#007aff",

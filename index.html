@@ -5,23 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#007aff">
     <title>AdminFilePro</title>
-    <link rel="manifest" href="/AdminFilePro/manifest.json"> 
-    <link rel="apple-touch-icon" href="/AdminFilePro/icons/icon-192.png">
-    <!-- PWA Manifest -->
     
-    <!-- Apple Touch Icon -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkFkbWluRmlsZVBybyIsCiAgInNob3J0X25hbWUiOiAiRmlsZVBybyIsCiAgImRlc2NyaXB0aW9uIjogIkdlc3Rpb25lIHByb2Zlc3Npb25hbGUgZGViaXRpIGFnZW56aWUiLAogICJzdGFydF91cmwiOiAiLiIsCiAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgImJhY2tncm91bmRfY29sb3IiOiAiI2Y5ZjlmYiIsCiAgInRoZW1lX2NvbG9yIjogIiMwMDdhZmYiLAogICJvcmllbnRhdGlvbiI6ICJwb3J0cmFpdCIsCiAgImljb25zIjogWwogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFBQUlBQUFBQ0FDQVlBQUFENEJBQUFBIiwKICAgICAgInNpemVzIjogIjUxMng1MTIiLAogICAgICAidHlwZSI6ICJpbWFnZS9wbmciCiAgICB9CiAgXQp9">
+    
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAABZ0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMS42/U4J6AAABGdJREFUeF7t3D1oFVEQBuCNiIJYWFhYiI2FhYWFhYVYWIiFhYVYWFgIFoKFYCFYCBaChWAhWAgWgoVgIVgIFoKFYCH4g4VgIVgI/uAvzpnce3Pv3t2zZ3fO7p73wEcSk5vMzHdmzpzdu+8VgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgnHHwsLCFLF7fn5+p9gz+f+/giAYY0gCrCC2EzuJLcRmsUlsI7FZbJPYLraLWPCAwRhiZmZmJbGH+EZ8Jr4Q74m3xGviJfGceEI8JO4R14lzxAFiD7GO6HQiZCGBDKcR54mbxEPiGfGaeEt8ID4TX4kfRA8TIQsJZLgmcYQ4R1wl7hJPidfEO+Ij8YX4RvwgehgEWUggw3WJY8Ql4jbxmHhFvCXeE5+Ir8R3oodBkIUEMlyf2E+cJK4Qt4gnxEviDfGO+EB8Jr4SP4geBkEWEshwI2I3cZQ4T1wjbhOPiZfEa+It8Z74RHwhvhE9DIIsJJDhpsQu4ghxlrhM3CQeEs+JV8Qb4h3xgfhMfCV+ED0MgiwkkOFY4ghxlrhE3CAeEE+JF8Qr4g3xjnhPfCQ+E1+J70QPgyALCWS4FbGXOEKcIS4S14m7xCPiGfGSeE28Id4S74kPxCfiC/GN6GEQZCGBDLcjdhOHiRPEeeIKcYO4SzwinhIviVfEG+It8Y54T3wkPhNfiR8EgyALCWS4I7GL2E8cJU4SF4irxA3iDvGQeEw8J14Sr4k3xFviHfGe+EB8Ir4Q34geBkEWEsiwJXYQ+4hDxDHiNHGBuExcI24Sd4gHxGPiGfGCeEW8Jt4Qb4l3xHviA/GJ+EJ8I34QPQyCLCSQYWvsJPYRB4nDxHHiFHGOuEhcIa4TN4m7xAPiEfGUeE68JF4Rr4k3xFviHfGe+EB8Ij4TX4nvRA+DIAsJZLgTsZvYSxwgDhFHiePEKeIMcZ64RFwhrhE3iVvEXeI+8ZB4TDwjnhMviVfEa+IN8ZZ4R7wnPhCfiM/EV+I70cMgyEIC+SkIgiAIgiAIgiAIgiAIgiAIgnGH3DOYnp5eI3ZOTk5uEpvElsR6sYbQcLEFsWhkEGQhgQx3J7Q3cZI4Q1wgLhNXiWvEDeIWcYe4TzwkHhNPiefES+IV8Zp4Q7wl3hHviQ/EJ+Iz8ZX4TvQwCLKQQIa7E/uJE8R54jJxjbhJ3CUeEE+J58Qr4jXxjnhPfCQ+E1+JH0QPgyALCWS4B3GEOE1cIC4RV4nrxC3iLvGAeEQ8I14Qr4g3xDviPfGR+Ex8Jb4TPQyCLCSQ4Z7EYeIUcY64SFwhrhE3iNvEPeIh8YR4TrwkXhNviHfEB+IT8YX4RvQwCLKQQIZ7E0eJU8R54hJxhbhO3CLuEveJR8RT4gXxinhDvCPeEx+JT8QX4hvRwyDIQgIZBkEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBMG4o1D4CxA9HkkIS0mHAAAAAElFTSuQmCC">
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     
-    <!-- Firebase SDK v9 -->
     <script type="module">
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
         import { getFirestore, doc, setDoc, getDoc, onSnapshot, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
-        import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js';
         
-        // Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyBGEs9gyeusEx3y3CSiOYYaH0i4udV7FZE",
             authDomain: "filemimmo-admin.firebaseapp.com",
@@ -31,31 +27,17 @@
             appId: "1:252244376513:web:f41045e42abab039430d40",
             measurementId: "G-FTEQLN8PZ0"
         };
-
         try {
-            // Initialize Firebase
             const app = initializeApp(firebaseConfig);
-            const db = getFirestore(app);
-            const analytics = getAnalytics(app);
-            
-            // Export globally
-            window.firebaseDb = db;
+            window.firebaseDb = getFirestore(app);
             window.firebaseDoc = doc;
             window.firebaseSetDoc = setDoc;
             window.firebaseGetDoc = getDoc;
             window.firebaseOnSnapshot = onSnapshot;
             window.firebaseServerTimestamp = serverTimestamp;
-            
-            // Signal Firebase is ready
             window.firebaseReady = true;
-            window.firebaseInitialized = true;
             window.dispatchEvent(new Event('firebaseready'));
-            
             console.log('🔥 Firebase SDK caricato con successo');
-            console.log('📊 Configurazione:', {
-                projectId: firebaseConfig.projectId,
-                authDomain: firebaseConfig.authDomain
-            });
         } catch (error) {
             console.error('❌ Errore inizializzazione Firebase:', error);
             window.firebaseReady = false;
@@ -63,1140 +45,188 @@
     </script>
     
     <style>
-        /* ========== VARIABILI CSS ========== */
         :root {
             --primary-color: #007aff;
             --success-color: #34c759;
             --warning-color: #ff9500;
             --danger-color: #ff3b30;
-            --background-color: #f2f2f7;
+            --background-color: #f9f9fb;
             --card-background: #ffffff;
-            --text-primary: #1c1c1e;
-            --text-secondary: #8e8e93;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
             --border-color: #e5e5ea;
-            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        /* ========== RESET E BASE ========== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-primary);
-            min-height: 100vh;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* ========== PWA INSTALL PROMPT ========== */
-        .install-prompt {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary-color);
-            color: white;
-            padding: 16px 24px;
-            border-radius: 50px;
-            box-shadow: var(--shadow-hover);
-            display: none;
-            align-items: center;
-            gap: 12px;
-            z-index: 1000;
-            animation: slideUp 0.3s ease-out;
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateX(-50%) translateY(100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(-50%) translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .install-prompt button {
-            background: white;
-            color: var(--primary-color);
-            border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        /* ========== LAYOUT ========== */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* ========== HEADER ========== */
-        .header {
-            background-color: var(--card-background);
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow-light);
-            border: 1px solid var(--border-color);
-        }
-
-        .header h1 {
-            text-align: center;
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-        }
-
-        .header-controls {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-        }
-
-        .btn-header {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .btn-header:hover {
-            background-color: #0056cc;
-            transform: translateY(-1px);
-        }
-
-        .btn-header:active {
-            transform: translateY(0);
-        }
-
-        /* ========== SYNC STATUS ========== */
-        .sync-status {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 12px 16px;
-            background-color: #e8f5e8;
-            border-radius: 8px;
-            font-size: 16px;
-            color: var(--success-color);
-            margin-bottom: 16px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .sync-status.connecting {
-            background-color: #fff8f0;
-            color: var(--warning-color);
-        }
-
-        .sync-status.error {
-            background-color: #ffeaea;
-            color: var(--danger-color);
-        }
-
-        /* ========== UPLOAD SECTION ========== */
-        .upload-section {
-            background-color: var(--background-color);
-            border-radius: 12px;
-            padding: 20px;
-            border: 2px dashed #c7c7cc;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .upload-section:hover {
-            border-color: var(--primary-color);
-            background-color: #f8f8fc;
-        }
-
-        .file-label {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 16px;
-            transition: all 0.2s ease;
-        }
-
-        .file-label:hover {
-            background-color: #0056cc;
-            transform: scale(1.05);
-        }
-
-        .file-input {
-            display: none;
-        }
-
-        /* ========== STATS CARDS ========== */
-        .stats, .stats-payment {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-bottom: 16px;
-        }
-
-        .stats-payment {
-            padding-top: 8px;
-            border-top: 1px solid #e5e5ea;
-        }
-
-        .stat-card {
-            background-color: var(--card-background);
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            border: 1px solid var(--border-color);
-            cursor: pointer;
-            transition: all 0.2s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-color), #00c7ff);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .stat-card:hover::before {
-            opacity: 1;
-        }
-
-        .stat-card.clickable {
-            background-color: #f8f8fc;
-        }
-
-        .stat-number {
-            font-size: 24px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 4px;
-        }
-
-        .stat-number.danger {
-            color: var(--danger-color);
-        }
-
-        .stat-number.success {
-            color: var(--success-color);
-        }
-
-        .stat-number.warning {
-            color: var(--warning-color);
-        }
-
-        .stat-label {
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-
-        /* ========== CONTROLS ========== */
-        .controls {
-            background-color: var(--card-background);
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow-light);
-            border: 1px solid var(--border-color);
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid #d1d1d6;
-            border-radius: 10px;
-            font-size: 16px;
-            background-color: var(--background-color);
-            margin-bottom: 16px;
-            transition: all 0.2s ease;
-        }
-
-        .search-input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            background-color: white;
-        }
-
-        .filters-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 12px;
-        }
-
-        .filter-select {
-            padding: 12px 16px;
-            border: 1px solid #d1d1d6;
-            border-radius: 10px;
-            font-size: 16px;
-            background-color: var(--background-color);
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .filter-select:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            background-color: white;
-        }
-
-        /* ========== FILTER RESET ========== */
-        .filter-reset {
-            display: flex;
-            justify-content: center;
-            margin-top: 12px;
-        }
-
-        .btn-reset {
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 1px solid var(--primary-color);
-            padding: 8px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-
-        .btn-reset:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        /* ========== NOTES SUMMARY ========== */
-        .notes-summary-section {
-            background-color: var(--card-background);
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow-light);
-            border: 1px solid var(--border-color);
-        }
-
-        .notes-summary-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .notes-list {
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .note-item {
-            background-color: var(--background-color);
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 8px;
-            border-left: 3px solid var(--primary-color);
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .note-item:hover {
-            background-color: #e8f2ff;
-            transform: translateX(4px);
-        }
-
-        .note-agency {
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 4px;
-        }
-
-        .note-content {
-            font-size: 14px;
-            color: #3c3c43;
-            margin-bottom: 4px;
-        }
-
-        .note-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 12px;
-            color: var(--text-secondary);
-        }
-
-        /* ========== AGENCIES GRID ========== */
-        .agencies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 16px;
-        }
-
-        .agency-card {
-            background-color: var(--card-background);
-            border-radius: 12px;
-            padding: 16px;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e5e5ea;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            position: relative;
-        }
-
-        .agency-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            border-radius: 12px 0 0 12px;
-        }
-
-        .agency-card.payment-rid::before,
-        .agency-card.payment-bonifico::before {
-            background-color: var(--success-color);
-        }
-
-        .agency-card.payment-promessi::before {
-            background-color: var(--warning-color);
-        }
-
-        .agency-card.payment-sospeso::before {
-            background-color: var(--danger-color);
-        }
-
-        .agency-card:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .agency-name {
-            font-size: 17px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 6px;
-        }
-
-        /* ========== PAYMENT STATUS DROPDOWN ========== */
-        .payment-status-dropdown {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            z-index: 10;
-        }
-
-        .payment-status-select {
-            padding: 4px 10px;
-            border-radius: 16px;
-            font-size: 11px;
-            font-weight: 500;
-            border: 1px solid #e5e5ea;
-            cursor: pointer;
-            background-color: white;
-            color: var(--text-primary);
-            min-width: 110px;
-            text-align: center;
-            transition: all 0.2s ease;
-        }
-
-        .payment-status-select:focus {
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
-        }
-
-        .payment-status-select.status-rid,
-        .payment-status-select.status-bonifico {
-            background-color: #e8f5e8;
-            color: var(--success-color);
-            border-color: var(--success-color);
-        }
-
-        .payment-status-select.status-promessi {
-            background-color: #fff8f0;
-            color: var(--warning-color);
-            border-color: var(--warning-color);
-        }
-
-        .payment-status-select.status-sospeso {
-            background-color: #ffeaea;
-            color: var(--danger-color);
-            border-color: var(--danger-color);
-        }
-
-        /* ========== AGENCY INFO ========== */
-        .agency-info {
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-
-        .agency-info div {
-            margin-bottom: 2px;
-        }
-
-        .debt-amount {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .debt-amount.danger {
-            color: var(--danger-color);
-        }
-
-        .debt-amount.success {
-            color: var(--success-color);
-        }
-
-        .agency-info strong {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        /* ========== PHONE LINKS ========== */
-        .card-phone-links {
-            margin-top: 6px;
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-        }
-
-        .card-phone-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 3px;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 3px 8px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 11px;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-
-        .card-phone-link:hover {
-            background-color: #0056cc;
-            transform: scale(1.02);
-        }
-
-        /* ========== STATUS BADGE ========== */
-        .status-badge {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 16px;
-            font-size: 11px;
-            font-weight: 500;
-        }
-
-        .status-badge.active {
-            background-color: #e3f2fd;
-            color: var(--primary-color);
-        }
-
-        .status-badge.suspended {
-            background-color: #ffeaea;
-            color: var(--danger-color);
-        }
-
-        /* ========== EMPTY STATE ========== */
-        .empty-state {
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--text-secondary);
-        }
-
-        .empty-state h3 {
-            margin-bottom: 12px;
-            color: var(--text-primary);
-        }
-
-        /* ========== MODAL ========== */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            animation: fadeIn 0.3s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .modal-content {
-            background-color: #ffffff;
-            margin: 3% auto;
-            padding: 0;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 600px;
-            max-height: 90vh;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            animation: slideDown 0.3s ease-out;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .modal-header {
-            padding: 20px 24px;
-            border-bottom: 1px solid #e5e5ea;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #ffffff;
-        }
-
-        .modal-title {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin: 0;
-        }
-
-        .close-modal {
-            color: #8e8e93;
-            font-size: 24px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0;
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: all 0.2s ease;
-        }
-
-        .close-modal:hover {
-            background-color: #f2f2f7;
-            color: #3c3c43;
-        }
-
-        .modal-body {
-            flex: 1;
-            overflow-y: auto;
-            padding: 0;
-            background-color: #f2f2f7;
-        }
-
-        /* ========== CONTACT SECTION ========== */
-        .contact-section {
-            background-color: #ffffff;
-            padding: 20px;
-            margin: 0;
-        }
-
-        .contact-title {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin-bottom: 0;
-        }
-
-        .contact-input {
-            padding: 12px 16px;
-            border: 1px solid #e5e5ea;
-            border-radius: 10px;
-            font-size: 15px;
-            background-color: #f2f2f7;
-            transition: all 0.2s ease;
-        }
-
-        .contact-input::placeholder {
-            color: #8e8e93;
-        }
-
-        .contact-input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            background-color: white;
-            box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
-        }
-
-        /* ========== TABS ========== */
-        .tabs {
-            display: flex;
-            background-color: #ffffff;
-            padding: 0 20px;
-            border-bottom: 1px solid #e5e5ea;
-        }
-
-        .tab {
-            padding: 12px 20px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 15px;
-            font-weight: 500;
-            color: #8e8e93;
-            position: relative;
-            transition: color 0.2s ease;
-        }
-
-        .tab:hover {
-            color: var(--primary-color);
-        }
-
-        .tab.active {
-            color: var(--primary-color);
-        }
-
-        .tab.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-        }
-
-        .tab-content {
-            display: none;
-            background-color: #ffffff;
-            padding: 20px;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        /* ========== SUMMARY GRID ========== */
-        .summary-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .summary-item {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .summary-label {
-            font-size: 13px;
-            color: #8e8e93;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .summary-value {
-            font-size: 16px;
-            font-weight: 500;
-            color: var(--text-primary);
-        }
-
-        /* ========== DOCUMENT ITEM ========== */
-        .document-item {
-            background-color: #f2f2f7;
-            border-radius: 10px;
-            padding: 16px;
-            margin-bottom: 12px;
-        }
-
-        .document-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        .document-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .document-amount {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--danger-color);
-        }
-
-        .document-details {
-            font-size: 13px;
-            color: #6e6e73;
-            line-height: 1.4;
-        }
-
-        /* ========== NOTES SECTION ========== */
-        .notes-section {
-            background-color: #ffffff;
-            padding: 20px;
-            margin-top: 1px;
-        }
-
-        .notes-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-        }
-
-        .notes-textarea {
-            width: 100%;
-            min-height: 120px;
-            padding: 12px 16px;
-            border: 1px solid #e5e5ea;
-            border-radius: 10px;
-            font-size: 15px;
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
-            resize: vertical;
-            background-color: #f2f2f7;
-            transition: all 0.2s ease;
-        }
-
-        .notes-textarea::placeholder {
-            color: #8e8e93;
-        }
-
-        .notes-textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            background-color: white;
-            box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
-        }
-
-        .notes-history {
-            font-size: 12px;
-            color: #8e8e93;
-            margin-top: 8px;
-            font-style: italic;
-        }
-
-        /* ========== MESSAGE SECTION ========== */
-        .message-section {
-            background-color: #ffffff;
-            padding: 20px;
-            margin-top: 1px;
-        }
-
-        .message-preview {
-            background-color: #f2f2f7;
-            border-radius: 10px;
-            padding: 16px;
-            margin-top: 16px;
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
-            white-space: pre-wrap;
-            font-size: 14px;
-            line-height: 1.6;
-            border: 1px solid #e5e5ea;
-        }
-
-        /* ========== BUTTONS ========== */
-        .phone-buttons {
-            display: flex;
-            gap: 12px;
-            margin-top: 12px;
-        }
-
-        .phone-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 16px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .phone-btn:hover {
-            background-color: #0056cc;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 15px;
-            transition: all 0.2s ease;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056cc;
-            transform: translateY(-1px);
-        }
-
-        .btn-primary:active {
-            transform: translateY(0);
-        }
-
-        .btn-secondary {
-            background-color: var(--success-color);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 16px;
-            transition: all 0.2s ease;
-        }
-
-        .btn-secondary:hover {
-            background-color: #28a745;
-            transform: translateY(-1px);
-        }
-
-        /* ========== NOTES LIST MODAL ========== */
-        .notes-list-item {
-            background-color: #f2f2f7;
-            padding: 16px;
-            border-radius: 10px;
-            margin-bottom: 12px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .notes-list-item:hover {
-            background-color: #e8f2ff;
-            transform: translateX(4px);
-        }
-
-        .notes-list-agency {
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 6px;
-            font-size: 16px;
-        }
-
-        .notes-list-content {
-            font-size: 14px;
-            color: #3c3c43;
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-
-        .notes-list-date {
-            font-size: 13px;
-            color: #8e8e93;
-        }
-
-        /* ========== LOADING SPINNER ========== */
-        .spinner {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* ========== TOAST NOTIFICATIONS ========== */
-        .toast {
-            position: fixed;
-            bottom: 100px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: #333;
-            color: white;
-            padding: 16px 24px;
-            border-radius: 8px;
-            box-shadow: var(--shadow-hover);
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 1001;
-        }
-
-        .toast.show {
-            transform: translateX(-50%) translateY(0);
-            opacity: 1;
-        }
-
-        .toast.success {
-            background: var(--success-color);
-        }
-
-        .toast.error {
-            background: var(--danger-color);
-        }
+            --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.1);
+            --font-family-apple: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-family-apple); background-color: var(--background-color); color: var(--text-primary); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+        
+        .header { background-color: var(--card-background); border-radius: 20px; padding: 24px; margin-bottom: 24px; box-shadow: var(--shadow-light); border: 1px solid var(--border-color); }
+        .header h1 { text-align: center; font-size: 32px; font-weight: 600; color: var(--text-primary); margin-bottom: 20px; letter-spacing: -0.5px; }
+        .header-controls { display: flex; gap: 12px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
+        .btn-header { background-color: #f0f0f5; color: var(--text-primary); border: none; padding: 10px 18px; border-radius: 10px; cursor: pointer; font-size: 14px; font-weight: 500; transition: all 0.2s ease; display: flex; align-items: center; gap: 8px; }
+        .btn-header:hover { background-color: #e5e5ea; transform: translateY(-1px); }
+        
+        .sync-status { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 16px; border-radius: 10px; font-size: 14px; font-weight: 500; margin-bottom: 20px; }
+        .sync-status.connecting { background-color: #fff8f0; color: var(--warning-color); }
+        .sync-status.error { background-color: #ffeeee; color: var(--danger-color); }
+        .sync-status.connected { background-color: #eef7ee; color: var(--success-color); }
+        .upload-section { background-color: transparent; border-radius: 16px; padding: 24px; border: 2px dashed var(--border-color); text-align: center; transition: all 0.3s ease; }
+        .upload-section:hover { border-color: var(--primary-color); }
+        .file-label { display: inline-block; background-color: var(--primary-color); color: white; padding: 12px 24px; border-radius: 12px; cursor: pointer; font-weight: 600; font-size: 16px; transition: all 0.2s ease; }
+        .file-label:hover { background-color: #0056cc; transform: scale(1.03); }
+        .file-input { display: none; }
+
+        .stats, .stats-payment { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 24px; }
+        .stats-payment { padding-top: 20px; border-top: 1px solid #e5e5ea; }
+        .stat-card { background-color: var(--card-background); border-radius: 16px; padding: 24px; text-align: left; box-shadow: var(--shadow-light); border: 1px solid var(--border-color); cursor: pointer; transition: all 0.2s ease; }
+        .stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+        .stat-number { font-size: 28px; font-weight: 600; margin-bottom: 6px; }
+        .stat-number.danger { color: var(--danger-color); }
+        .stat-label { font-size: 15px; font-weight: 500; color: var(--text-secondary); }
+
+        .controls { background-color: var(--card-background); border-radius: 20px; padding: 24px; margin-bottom: 24px; box-shadow: var(--shadow-light); border: 1px solid var(--border-color); }
+        .search-input { width: 100%; padding: 14px 18px; border: 1px solid var(--border-color); border-radius: 12px; font-size: 16px; background-color: var(--background-color); margin-bottom: 16px; }
+        .filters-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+        .filter-select { padding: 14px 18px; border: 1px solid var(--border-color); border-radius: 12px; font-size: 16px; background-color: var(--background-color); cursor: pointer; -webkit-appearance: none; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5z%22%20fill%3D%22%236e6e73%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1.2em; }
+        .btn-reset { background: transparent; color: var(--primary-color); border: none; padding: 8px 20px; border-radius: 10px; cursor: pointer; font-size: 15px; font-weight: 500; }
+        
+        .role-stats { background-color: var(--card-background); border-radius: 20px; padding: 24px; margin-bottom: 24px; box-shadow: var(--shadow-light); border: 1px solid var(--border-color); }
+        .role-stats-title { font-size: 20px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .role-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .role-stat-item { background-color: #f9f9fb; padding: 16px; border-radius: 12px; border: 1px solid #e5e5ea; }
+        .role-stat-label { font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; font-weight: 500; text-transform: uppercase; }
+        .role-stat-list { max-height: 250px; overflow-y: auto; }
+        .role-stat-entry { display: flex; justify-content: space-between; padding: 6px 0; font-size: 14px; border-bottom: 1px solid #e5e5ea; }
+        .role-stat-entry:last-child { border-bottom: none; }
+        .role-stat-name { font-weight: 500; }
+        .role-stat-amount { font-weight: 600; color: var(--danger-color); }
+        
+        .agencies-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; }
+        .agency-card { background-color: var(--card-background); border-radius: 16px; padding: 20px; box-shadow: var(--shadow-light); border: 1px solid var(--border-color); cursor: pointer; transition: all 0.2s ease; position: relative; }
+        .agency-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+        .agency-card::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; border-radius: 16px 0 0 16px; transition: background-color 0.3s; }
+        .agency-card.payment-rid::before, .agency-card.payment-bonifico::before { background-color: var(--success-color); }
+        .agency-card.payment-promessi::before { background-color: var(--warning-color); }
+        .agency-card.payment-sospeso::before { background-color: var(--danger-color); }
+        .agency-name { font-size: 18px; font-weight: 600; margin-bottom: 8px; padding-right: 120px; }
+        .payment-status-dropdown { position: absolute; top: 16px; right: 16px; z-index: 10; }
+        .payment-status-select { padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 500; border: 1px solid var(--border-color); cursor: pointer; background-color: #f9f9fb; }
+        .agency-info { font-size: 14px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.6; }
+        .agency-info strong { font-weight: 500; color: var(--text-primary); }
+        .debt-amount { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+        .debt-amount.danger { color: var(--danger-color); }
+        .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; }
+        .status-badges { display: flex; gap: 6px; }
+        .status-badge { display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 12px; font-weight: 500; }
+        .status-badge.attivo { background-color: #e3f2fd; color: var(--primary-color); }
+        .status-badge.sospeso { background-color: #ffeeee; color: var(--danger-color); }
+        .status-badge.promessa { background-color: #fff8f0; color: var(--warning-color); }
+        .empty-state { text-align: center; padding: 80px 20px; color: var(--text-secondary); }
+        .empty-state h3 { font-size: 20px; margin-bottom: 12px; color: var(--text-primary); }
+        .notes-summary-section { background-color: var(--card-background); border-radius: 20px; padding: 24px; margin-bottom: 24px; box-shadow: var(--shadow-light); border: 1px solid var(--border-color); }
+        .notes-summary-title { font-size: 20px; font-weight: 600; color: var(--text-primary); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .notes-list { max-height: 300px; overflow-y: auto; }
+        .note-item { padding: 12px; border-radius: 10px; margin-bottom: 8px; cursor: pointer; transition: background-color 0.2s; position: relative; }
+        .note-item:hover { background-color: #f0f0f5; }
+        .note-agency { font-weight: 600; margin-bottom: 4px; }
+        .note-content { font-size: 14px; color: #3c3c43; margin-bottom: 6px; }
+        .note-meta { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--text-secondary); }
+        .note-delete-btn-summary { position: absolute; top: 12px; right: 12px; background: none; border: none; color: #aaa; cursor: pointer; font-size: 16px; padding: 4px; transition: color 0.2s; z-index: 5; }
+        .note-delete-btn-summary:hover { color: var(--danger-color); }
+
+        /* Modal */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.4); backdrop-filter: blur(5px); animation: fadeIn 0.3s ease-out; }
+        .modal-content { background-color: var(--background-color); margin: 3% auto; border-radius: 20px; width: 90%; max-width: 700px; max-height: 90vh; overflow: hidden; display: flex; flex-direction: column; animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
+        .modal-header { padding: 20px 24px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background-color: var(--card-background); }
+        .modal-title { font-size: 22px; font-weight: 600; }
+        .close-modal { color: #8e8e93; font-size: 28px; cursor: pointer; background: #f0f0f5; border: none; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s ease; }
+        .close-modal:hover { background-color: #e5e5ea; transform: rotate(90deg); }
+        .modal-body { flex: 1; overflow-y: auto; padding: 8px; }
+        .modal-section { background-color: var(--card-background); padding: 24px; margin: 8px; border-radius: 16px; }
+        .modal-section-title { font-size: 17px; font-weight: 600; margin-bottom: 16px; }
+        .status-buttons { display: flex; gap: 8px; }
+        .status-btn { flex: 1; padding: 12px; border: 2px solid; border-radius: 10px; background-color: var(--card-background); cursor: pointer; font-weight: 600; font-size: 14px; transition: all 0.2s ease; text-align: center; }
+        .status-btn.active { color: white; }
+        .status-btn.attivo-pagato { border-color: var(--success-color); color: var(--success-color); }
+        .status-btn.attivo-pagato.active { background-color: var(--success-color); }
+        .status-btn.attivo-promessa { border-color: var(--warning-color); color: var(--warning-color); }
+        .status-btn.attivo-promessa.active { background-color: var(--warning-color); }
+        .status-btn.sospeso-insoluto { border-color: var(--danger-color); color: var(--danger-color); }
+        .status-btn.sospeso-insoluto.active { background-color: var(--danger-color); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+        .contact-input { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border-color); font-size: 15px; }
+        .tabs { display: flex; background-color: #f0f0f5; padding: 4px; border-radius: 12px; margin-bottom: 16px; }
+        .tab { flex: 1; padding: 10px; background: transparent; border: none; cursor: pointer; font-size: 15px; font-weight: 500; color: var(--text-secondary); border-radius: 9px; transition: all 0.2s ease; }
+        .tab.active { color: var(--text-primary); background-color: var(--card-background); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .tab-content { display: none; } .tab-content.active { display: block; }
+        .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .summary-item { display: flex; flex-direction: column; gap: 8px; }
+        .summary-label { font-size: 13px; color: var(--text-secondary); text-transform: uppercase; }
+        .summary-value { font-size: 16px; font-weight: 500; }
+        .document-item { background-color: #f9f9fb; border-radius: 10px; padding: 16px; margin-bottom: 12px; border: 1px solid #e5e5ea; }
+        .document-header { display: flex; justify-content: space-between; align-items: center; }
+        .document-title, .document-amount { font-size: 16px; font-weight: 600; }
+        .document-amount { color: var(--danger-color); }
+        .document-details { font-size: 13px; color: #6e6e73; margin-top: 4px; }
+        .note-form { display: grid; gap: 12px; grid-template-areas: 'text text' 'due channels' 'button button'; }
+        .notes-textarea { grid-area: text; width: 100%; min-height: 100px; padding: 12px; border: 1px solid var(--border-color); border-radius: 10px; font-size: 15px; resize: vertical; }
+        .due-date-group { grid-area: due; display: flex; flex-direction: column; gap: 4px; }
+        .channel-checkboxes { grid-area: channels; display: flex; flex-direction: column; gap: 4px; }
+        .btn-primary { grid-area: button; background: var(--primary-color); color: white; border: none; padding: 14px; border-radius: 12px; cursor: pointer; font-weight: 600; font-size: 16px; width: 100%; margin-top: 0; }
+        .notes-history-list { max-height: 250px; overflow-y: auto; margin-top: 20px; }
+        .note-history-item { padding: 12px 0; border-bottom: 1px solid #e5e5ea; position: relative; }
+        .note-history-item:last-child { border: none; }
+        .note-delete-btn { position: absolute; top: 12px; right: 0; background: none; border: none; color: #aaa; cursor: pointer; font-size: 16px; }
+        .note-delete-btn:hover { color: var(--danger-color); }
+        .note-history-meta { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; }
+        .note-history-text { font-size: 15px; white-space: pre-wrap; line-height: 1.5; padding-right: 24px; }
+        .message-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+        .message-btn { flex: 1; min-width: 150px; padding: 12px; background-color: #f0f0f5; color: var(--primary-color); border: none; border-radius: 10px; cursor: pointer; font-size: 14px; font-weight: 500; }
+        .message-preview { background-color: #f0f0f5; border-radius: 10px; padding: 16px; margin-top: 16px; white-space: pre-wrap; font-size: 14px; line-height: 1.6; border: 1px solid var(--border-color); }
+        .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.75); color: white; padding: 12px 24px; border-radius: 10px; z-index: 2000; opacity: 0; transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(-20px); }
 
-        /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
-            .container { 
-                padding: 16px; 
-            }
-            
-            .agencies-grid { 
-                grid-template-columns: 1fr; 
-            }
-            
-            .filters-row { 
-                grid-template-columns: 1fr; 
-            }
-            
-            .stats, .stats-payment { 
-                grid-template-columns: 1fr; 
-            }
-            
-            .contact-grid { 
-                grid-template-columns: 1fr; 
-            }
-            
-            .modal-content { 
-                width: 95%; 
-                margin: 2% auto; 
-            }
-            
-            .modal-info-section {
-                padding: 12px;
-            }
-            
-            .summary-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .header-controls { 
-                flex-direction: column; 
-                align-items: stretch;
-            }
-            
-            .btn-header {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .payment-status-select {
-                width: 100%;
-            }
-            
-            .tabs {
-                padding: 0 16px;
-            }
-            
-            .tab {
-                font-size: 14px;
-                padding: 12px 16px;
-            }
+            .container { padding: 16px; }
+            .agencies-grid, .filters-row, .stats, .stats-payment, .role-stats-grid, .contact-grid, .summary-grid { grid-template-columns: 1fr; }
+            .modal-content { width: 100%; height: 100%; max-height: 100%; margin: 0; border-radius: 0; }
+            .header-controls { flex-direction: column; align-items: stretch; }
+            .note-form { grid-template-areas: 'text' 'due' 'channels' 'button'; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <div class="header">
             <h1>AdminFilePro</h1>
-            
             <div class="header-controls">
-                <button class="btn-header" onclick="showNotesListModal()">📋 Visualizza Elenco Note</button>
+                <button class="btn-header" onclick="exportRoleStats()">💼 Export Dettaglio Insoluti</button>
+                <button class="btn-header" onclick="showNotesListModal()">📋 Elenco Note</button>
                 <button class="btn-header" onclick="exportSospesi()">📊 Export Sospesi</button>
                 <button class="btn-header" onclick="exportPromesse()">📊 Export Promesse</button>
-                <button class="btn-header" onclick="manualSync()">🔄 Sincronizza Ora</button>
-                <button class="btn-header" onclick="testFirebaseConnection()">🔥 Test Firebase</button>
+                <button class="btn-header" onclick="manualSync()">🔄 Sincronizza</button>
             </div>
-            
-            <div id="syncStatus" class="sync-status connecting">
-                <span>🔄 Connessione Firebase in corso...</span>
-            </div>
-            
-            <div id="fileInfo" style="text-align: center; margin-bottom: 16px; color: #8e8e93; font-size: 14px; display: none;"></div>
-            
+            <div id="syncStatus" class="sync-status"></div>
+            <div id="fileInfo" style="text-align: center; margin-bottom: 20px; color: var(--text-secondary); font-size: 14px; display: none;"></div>
             <div class="upload-section">
                 <input type="file" id="fileInput" class="file-input" accept=".xlsx,.xls">
                 <label for="fileInput" class="file-label">📁 Carica Foglio Excel</label>
-                <div id="fileStatus" style="margin-top: 12px; font-size: 14px; color: #8e8e93;"></div>
+                <div id="fileStatus" style="margin-top: 12px; font-size: 14px; color: var(--text-secondary);"></div>
             </div>
         </div>
 
-        <!-- Stats Section -->
-        <div id="statsSection" style="display: none;">
-            <div class="stats"></div>
-            <div class="stats-payment"></div>
+        <div id="statsSection" style="display: none;"><div class="stats"></div><div class="stats-payment"></div></div>
+        <div id="roleStatsSection" class="role-stats" style="display: none;">
+            <div class="role-stats-title"><span>💼</span><span>Insoluti per Ruolo</span></div>
+            <div class="role-stats-grid">
+                <div class="role-stat-item"><div class="role-stat-label">Consulenti Editoriali</div><div id="statsConsulentiEditoriali" class="role-stat-list"></div></div>
+                <div class="role-stat-item"><div class="role-stat-label">Consulenti di Rete</div><div id="statsConsulentiRete" class="role-stat-list"></div></div>
+                <div class="role-stat-item"><div class="role-stat-label">Team Manager</div><div id="statsTeamManager" class="role-stat-list"></div></div>
+            </div>
         </div>
-
-        <!-- Notes Summary -->
         <div id="notesSummarySection" class="notes-summary-section" style="display: none;">
             <div class="notes-summary-title">
                 <span>📋</span>
@@ -1204,1399 +234,529 @@
             </div>
             <div id="notesList" class="notes-list"></div>
         </div>
-
-        <!-- Controls -->
         <div id="controlsSection" class="controls" style="display: none;">
-            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Cerca agenzia, BDTI, consulente...">
+             <input type="text" id="searchInput" class="search-input" placeholder="🔍 Cerca agenzia, BDTI, consulente...">
             <div class="filters-row">
-                <select id="consultEditoriale" class="filter-select">
-                    <option value="">👤 Tutti i Consulenti Editoriali</option>
-                </select>
-                <select id="consultRete" class="filter-select">
-                    <option value="">👥 Tutti i Consulenti di Rete</option>
-                </select>
+                <select id="consultEditoriale" class="filter-select"><option value="">👤 Tutti i Consulenti Editoriali</option></select>
+                <select id="consultRete" class="filter-select"><option value="">👥 Tutti i Consulenti di Rete</option></select>
+                <select id="teamManager" class="filter-select"><option value="">👨‍💼 Tutti i Team Manager</option></select>
+            </div>
+            <div class="filters-row" style="margin-top: 12px;">
+                <select id="affiliatoFilter" class="filter-select"><option value="">🏢 Tutti gli Affiliati</option></select>
                 <select id="paymentStatus" class="filter-select">
                     <option value="">💳 Tutti gli Stati Pagamento</option>
-                    <option value="rid">🟢 Pagamenti Regolari RID</option>
-                    <option value="bonifico">🟢 Pagamenti Regolari Bonifico</option>
+                    <option value="rid">🟢 Pagamenti Regolari</option>
                     <option value="promessi">🟠 Pagamenti Promessi</option>
-                    <option value="sospeso">🔴 Sospeso in Pubblicità</option>
+                    <option value="sospeso">🔴 Sospeso Pubblicità</option>
+                </select>
+                <select id="agencyStatusFilter" class="filter-select">
+                    <option value="">📊 Tutti gli Stati Agenzia</option>
+                    <option value="attivo-pagato">🟢 Attivo</option>
+                    <option value="attivo-promessa">🟠 Promessa</option>
+                    <option value="sospeso-insoluto">🔴 Sospeso</option>
                 </select>
             </div>
-            <div class="filter-reset" id="filterReset" style="display: none;">
-                <button class="btn-reset" onclick="resetFilters()">🔄 Reset Filtri</button>
-            </div>
+            <div id="filterReset" style="display: none; justify-content: center; margin-top: 16px;"><button class="btn-reset" onclick="resetFilters()">🔄 Reset Filtri</button></div>
         </div>
-
-        <!-- Agencies Container -->
         <div id="agenciesContainer">
-            <div class="empty-state">
+             <div class="empty-state" id="initial-loading-message">
                 <h3>🔄 Caricando dati da Firebase...</h3>
                 <p>Se non hai mai caricato un file, clicca "Carica Foglio Excel"</p>
             </div>
         </div>
     </div>
 
-    <!-- Agency Details Modal -->
-    <div id="agencyModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalTitle" class="modal-title"></h2>
-                <button class="close-modal" onclick="closeModal()">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div id="modalContent"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Notes List Modal -->
-    <div id="notesListModal" class="modal">
-        <div class="modal-content" style="max-width: 700px;">
-            <div class="modal-header">
-                <h2 class="modal-title">📋 Elenco Note Complete</h2>
-                <button class="close-modal" onclick="closeNotesModal()">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div id="notesListContent"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- PWA Install Prompt -->
-    <div id="installPrompt" class="install-prompt">
-        <span>📱 Installa AdminFilePro</span>
-        <button onclick="installPWA()">Installa</button>
-    </div>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="toast"></div>
-
+    <div id="agencyModal" class="modal"><div class="modal-content"><div class="modal-header"><h2 id="modalTitle"></h2><button class="close-modal" onclick="closeModal()">&times;</button></div><div id="modalBody" class="modal-body"></div></div></div>
+    <div id="notesListModal" class="modal"><div class="modal-content" style="max-width: 800px;"><div class="modal-header"><h2 class="modal-title">📋 Elenco Note con Scadenza</h2><button class="close-modal" onclick="closeNotesModal()">&times;</button></div><div id="notesListModalBody" class="modal-body"></div></div></div>
+    
     <script>
-        // ========== GLOBAL VARIABLES ==========
-        let clientsData = [];
-        let agenciesData = [];
-        let personalNotes = {};
-        let communicationsHistory = {};
-        let editableData = {};
-        let paymentStatuses = {};
-        let currentFileName = '';
-        let fileLoadTime = '';
-        let firebaseConnected = false;
+        // GLOBAL STATE & UTILITIES
+        let agenciesData = [], editableData = {}, paymentStatuses = {}, agencyStatuses = {}, communicationsHistory = {};
         let filteredAgencies = [];
-        let deferredPrompt;
-        let realtimeListeners = [];
+        let fileInfo = { name: '', loadTime: '' };
+        let lastSyncTime = '';
+        let firebaseReady = false;
 
-        // ========== PWA SETUP ==========
-        // Service Worker disabilitato per problemi di sicurezza con data URL
-        // Per abilitarlo in produzione, usa un file service-worker.js separato
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            document.getElementById('installPrompt').style.display = 'flex';
-        });
-
-        function installPWA() {
-            document.getElementById('installPrompt').style.display = 'none';
-            deferredPrompt.prompt();
-            deferredPrompt.userChoice.then((choiceResult) => {
-                if (choiceResult.outcome === 'accepted') {
-                    showToast('✅ App installata con successo!', 'success');
-                }
-                deferredPrompt = null;
-            });
-        }
-
-        // ========== TOAST NOTIFICATIONS ==========
-        function showToast(message, type = 'info') {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.className = `toast ${type} show`;
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        }
-
-        // ========== FIREBASE FUNCTIONS ==========
-        async function waitForFirebase() {
-            if (window.firebaseReady) return true;
-            
-            return new Promise((resolve) => {
-                window.addEventListener('firebaseready', () => {
-                    resolve(true);
-                });
-                
-                // Timeout dopo 5 secondi
+        const F = {
+            escapeHtml: (text) => text ? text.toString().replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'})[m]) : '',
+            updateSyncStatus: (type, message) => { const el = document.getElementById('syncStatus'); if(el) { el.className = `sync-status ${type}`; el.innerHTML = `<span>${message}</span>`; }},
+            downloadCSV: (csvContent, fileName) => {
+                const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement("a");
+                link.href = URL.createObjectURL(blob);
+                link.setAttribute("download", fileName);
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            },
+            showToast: (message) => {
+                const toast = document.createElement('div');
+                toast.className = 'toast';
+                toast.textContent = message;
+                document.body.appendChild(toast);
                 setTimeout(() => {
-                    resolve(false);
-                }, 5000);
-            });
-        }
+                    toast.classList.add('show');
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                        setTimeout(() => toast.remove(), 300);
+                    }, 2000);
+                }, 10);
+            }
+        };
 
-        async function initFirebase() {
-            try {
-                updateSyncStatus('connecting', '🔄 Connessione Firebase...');
-                
-                // Verifica se siamo in HTTPS o localhost
-                if (location.protocol !== 'https:' && !location.hostname.includes('localhost')) {
-                    console.warn('⚠️ Firebase richiede HTTPS per funzionare correttamente');
-                }
-                
-                // Attendi che Firebase sia pronto
-                const isReady = await waitForFirebase();
-                if (!isReady) {
-                    throw new Error('Firebase SDK non caricato');
-                }
-                
-                if (!window.firebaseDb) {
-                    throw new Error('Firebase non inizializzato');
-                }
-                
-                // Test di connessione
-                const testDoc = window.firebaseDoc(window.firebaseDb, 'test', 'connection');
-                await window.firebaseSetDoc(testDoc, {
-                    test: true,
-                    timestamp: window.firebaseServerTimestamp()
-                });
-                
-                firebaseConnected = true;
-                console.log('🔥 Firebase connesso con successo');
-                updateSyncStatus('connected', '🔥 Firebase connesso - sincronizzazione real-time attiva');
-                
-                await loadAllFromFirebase();
-                startRealtimeSync();
-                
-                return true;
-                
-            } catch (error) {
-                console.error('❌ Errore connessione Firebase:', error.message);
-                
-                if (error.message.includes('Missing or insufficient permissions')) {
-                    updateSyncStatus('error', '❌ Permessi Firebase insufficienti');
-                } else if (error.message.includes('Failed to get document because the client is offline')) {
-                    updateSyncStatus('error', '📵 Modalità offline - controlla la connessione');
+        // FIREBASE ABSTRACTION
+        const FB = {
+            async save(docName, data) { if (!firebaseReady) return; try { await window.firebaseSetDoc(window.firebaseDoc(window.firebaseDb, 'filemimmo', docName), { data: JSON.stringify(data), timestamp: window.firebaseServerTimestamp() }); } catch (e) { console.error(`Save Error: ${docName}`, e); } },
+            async load(docName) { if (!firebaseReady) return null; try { const snap = await window.firebaseGetDoc(window.firebaseDoc(window.firebaseDb, 'filemimmo', docName)); return snap.exists() ? JSON.parse(snap.data().data) : null; } catch (e) { console.error(`Load Error: ${docName}`, e); return null; } },
+            async saveAll() {
+                if (!firebaseReady) return;
+                F.updateSyncStatus('connecting', '🔄 Sincronizzazione...');
+                await Promise.all(Object.entries({ agenciesData, editableData, paymentStatuses, agencyStatuses, communicationsHistory, fileInfo }).map(([k, v]) => FB.save(k, v)));
+                lastSyncTime = new Date().toLocaleString('it-IT');
+                UI.updateFileInfo();
+                F.updateSyncStatus('connected', '✅ Sincronizzato');
+            }
+        };
+
+        // UI RENDERING
+        const UI = {
+            updateFileInfo: () => {
+                const el = document.getElementById('fileInfo');
+                if (fileInfo && fileInfo.name && el) {
+                    el.innerHTML = `📁 ${F.escapeHtml(fileInfo.name)}&nbsp;&nbsp;|&nbsp;&nbsp;⏰ Caricato: ${fileInfo.loadTime}&nbsp;&nbsp;|&nbsp;&nbsp;🔄 Ultima sincronizzazione: ${lastSyncTime}`;
+                    el.style.display = 'block';
                 } else {
-                    updateSyncStatus('error', '❌ Firebase non disponibile - modalità offline');
+                    el.style.display = 'none';
                 }
-                
-                firebaseConnected = false;
-                return false;
-            }
-        }
-
-        // Real-time listeners
-        function startRealtimeSync() {
-            if (!firebaseConnected) return;
-            
-            // Clear existing listeners
-            realtimeListeners.forEach(unsubscribe => unsubscribe());
-            realtimeListeners = [];
-            
-            // Setup real-time listeners
-            const collections = [
-                'clientsData',
-                'agenciesData',
-                'editableData',
-                'personalNotes',
-                'communicationsHistory',
-                'paymentStatuses',
-                'fileInfo'
-            ];
-            
-            collections.forEach(collection => {
-                const docRef = window.firebaseDoc(window.firebaseDb, 'filemimmo', collection);
-                const unsubscribe = window.firebaseOnSnapshot(docRef, (doc) => {
-                    if (doc.exists()) {
-                        console.log(`🔄 Real-time update: ${collection}`);
-                        handleRealtimeUpdate(collection, doc.data());
+            },
+            displayStats: () => {
+                const data = filteredAgencies.length > 0 ? filteredAgencies : agenciesData;
+                const totals = data.reduce((acc, agency) => {
+                    acc.insoluti += agency.totalInsoluti; acc.promesse += agency.totalPromesse; acc.debito += agency.totalDebt;
+                    acc.payments[paymentStatuses[agency.name] || 'rid'] = (acc.payments[paymentStatuses[agency.name] || 'rid'] || 0) + 1;
+                    return acc;
+                }, { insoluti: 0, promesse: 0, debito: 0, payments: {} });
+                const formatCurrency = (num) => `€${(num || 0).toLocaleString('it-IT', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+                document.querySelector('.stats').innerHTML = `<div class="stat-card"><div class="stat-label">Totale Insoluti</div><div class="stat-number danger">${formatCurrency(totals.insoluti)}</div></div> <div class="stat-card"><div class="stat-label">Totale Promesse</div><div class="stat-number warning">${formatCurrency(totals.promesse)}</div></div> <div class="stat-card"><div class="stat-label">Totale Debito</div><div class="stat-number">${formatCurrency(totals.debito)}</div></div>`;
+                const regolari = (totals.payments.rid || 0) + (totals.payments.bonifico || 0);
+                document.querySelector('.stats-payment').innerHTML = `<div class="stat-card" onclick="filterByPaymentStatus('rid,bonifico')"><div class="stat-label">Agenzie Regolari</div><div class="stat-number success">${regolari}</div></div> <div class="stat-card" onclick="filterByPaymentStatus('promessi')"><div class="stat-label">Agenzie Promesse</div><div class="stat-number warning">${totals.payments.promessi || 0}</div></div> <div class="stat-card" onclick="filterByPaymentStatus('sospeso')"><div class="stat-label">Agenzie Sospese</div><div class="stat-number danger">${totals.payments.sospeso || 0}</div></div>`;
+            },
+            displayRoleStats: () => {
+                const roles = { statsConsulentiEditoriali: {}, statsConsulentiRete: {}, statsTeamManager: {} };
+                (filteredAgencies.length > 0 ? filteredAgencies : agenciesData).forEach(agency => {
+                    if (agency.totalInsoluti > 0) {
+                        const teamManager = agency.teamManager || (editableData[agency.name] && editableData[agency.name].teamManager);
+                        if (agency.consultEditoriale) roles.statsConsulentiEditoriali[agency.consultEditoriale] = (roles.statsConsulentiEditoriali[agency.consultEditoriale] || 0) + agency.totalInsoluti;
+                        if (agency.consultRete) roles.statsConsulentiRete[agency.consultRete] = (roles.statsConsulentiRete[agency.consultRete] || 0) + agency.totalInsoluti;
+                        if (teamManager) roles.statsTeamManager[teamManager] = (roles.statsTeamManager[teamManager] || 0) + agency.totalInsoluti;
                     }
                 });
-                realtimeListeners.push(unsubscribe);
-            });
-        }
+                Object.entries(roles).forEach(([elementId, stats]) => {
+                    const container = document.getElementById(elementId);
+                    if (!container) return;
+                    const sorted = Object.entries(stats).sort((a,b) => b[1] - a[1]);
+                    container.innerHTML = sorted.length ? sorted.map(([name, total]) => `<div class="role-stat-entry"><span class="role-stat-name">${F.escapeHtml(name)}</span><span class="role-stat-amount">€${total.toLocaleString('it-IT',{minimumFractionDigits:2})}</span></div>`).join('') : '<div style="text-align:center;color:var(--text-secondary);padding:10px 0;">Nessun insoluto</div>';
+                });
+            },
+            displayAgencies: () => {
+                const container = document.getElementById('agenciesContainer');
+                const loadingMessage = document.getElementById('initial-loading-message');
+                if (loadingMessage) loadingMessage.style.display = 'none';
 
-        function handleRealtimeUpdate(collection, data) {
-            if (!data || !data.data) return;
-            
-            const parsedData = JSON.parse(data.data);
-            
-            switch (collection) {
-                case 'clientsData':
-                    if (parsedData.length > 0) {
-                        clientsData = parsedData;
-                        if (agenciesData.length === 0) {
-                            groupDataByAgency();
-                        }
-                    }
-                    break;
-                    
-                case 'agenciesData':
-                    if (parsedData.length > 0) {
-                        agenciesData = parsedData;
-                        applyFilters();
-                        displayStats();
-                    }
-                    break;
-                    
-                case 'editableData':
-                    editableData = parsedData;
-                    if (filteredAgencies.length > 0) {
-                        displayAgencies(filteredAgencies);
-                    }
-                    break;
-                    
-                case 'personalNotes':
-                    personalNotes = parsedData;
-                    displayNotesSummary();
-                    break;
-                    
-                case 'communicationsHistory':
-                    communicationsHistory = parsedData;
-                    displayNotesSummary();
-                    break;
-                    
-                case 'paymentStatuses':
-                    paymentStatuses = parsedData;
-                    if (filteredAgencies.length > 0) {
-                        displayAgencies(filteredAgencies);
-                    }
-                    break;
-                    
-                case 'fileInfo':
-                    const fileInfo = parsedData;
-                    if (fileInfo.fileName) {
-                        currentFileName = fileInfo.fileName;
-                        fileLoadTime = fileInfo.loadTime;
-                        updateFileInfo();
-                    }
-                    break;
-            }
-        }
+                if (filteredAgencies.length === 0 && agenciesData.length > 0) { container.innerHTML = `<div class="empty-state"><h3>Nessuna agenzia trovata</h3><p>Prova a modificare i filtri di ricerca</p></div>`; return; }
+                const getOrder = (status) => ({'sospeso': 1, 'promessi': 2, 'rid': 3, 'bonifico': 3}[status] || 4);
+                filteredAgencies.sort((a, b) => getOrder(paymentStatuses[a.name]) - getOrder(paymentStatuses[b.name]));
+                const grid = document.createElement('div');
+                grid.className = 'agencies-grid';
+                grid.innerHTML = filteredAgencies.map(agency => {
+                    const paymentStatus = paymentStatuses[agency.name] || 'rid';
+                    const agencyStatus = (agencyStatuses[agency.name] || 'attivo-pagato').split('-')[0];
+                    return `
+                    <div class="agency-card payment-${paymentStatus}" onclick="showAgencyDetails(agenciesData.find(a => a.name === '${F.escapeHtml(agency.name)}'))">
+                        <div class="payment-status-dropdown" onclick="event.stopPropagation()">
+                            <select class="payment-status-select" onchange="updatePaymentStatus('${F.escapeHtml(agency.name)}', this.value)">
+                                <option value="rid" ${paymentStatus === 'rid' ? 'selected' : ''}>🟢 RID</option>
+                                <option value="bonifico" ${paymentStatus === 'bonifico' ? 'selected' : ''}>🟢 Bonifico</option>
+                                <option value="promessi" ${paymentStatus === 'promessi' ? 'selected' : ''}>🟠 Promessi</option>
+                                <option value="sospeso" ${paymentStatus === 'sospeso' ? 'selected' : ''}>🔴 Sospeso</option>
+                            </select>
+                        </div>
+                        <div class="agency-name">${F.escapeHtml(agency.name)}</div>
+                        <div class="agency-info">
+                            <div><strong>BDTI:</strong> ${agency.bdti || 'N/A'}</div>
+                            <div><strong>C. Editoriale:</strong> ${F.escapeHtml(agency.consultEditoriale) || 'N/A'}</div>
+                            <div><strong>C. Rete:</strong> ${F.escapeHtml(agency.consultRete) || 'N/A'}</div>
+                        </div>
+                        <div class="debt-amount ${agency.totalInsoluti > 0 ? 'danger' : ''}">Insoluto: €${agency.totalInsoluti.toLocaleString('it-IT', {minimumFractionDigits: 2})}</div>
+                        <div class="card-footer">
+                            <div class="status-badges"><span class="status-badge ${agencyStatus}">${agencyStatus.toUpperCase()}</span><span class="status-badge attivo">${agency.status || 'N/A'}</span></div>
+                            <span style="font-size:12px;color:var(--text-secondary);">${agency.documents.length} doc.</span>
+                        </div>
+                    </div>`;
+                }).join('');
+                container.innerHTML = '';
+                container.appendChild(grid);
+            },
+            displayNotesHistory: (agencyName, isReadOnly = false) => {
+                const history = communicationsHistory[agencyName] || [];
+                if (history.length === 0) return `<p style="text-align:center;color:var(--text-secondary);padding:20px 0;">${isReadOnly ? 'Nessuna nota presente' : 'Nessuna nota salvata'}</p>`;
+                return history.map((note, index) => {
+                    const channels = note.channels ? Object.entries(note.channels).filter(([_,v])=>v).map(([k])=>{
+                        if(k === 'whatsapp') return '💬';
+                        if(k === 'mail') return '📧';
+                        if(k === 'voce') return '📞';
+                    }).join(' ') : '';
+                    return `<div class="note-history-item">
+                        ${isReadOnly ? '' : `<button class="note-delete-btn" data-index="${index}" title="Elimina">🗑️</button>`}
+                        <div class="note-history-meta">
+                            <span>Creato: ${note.timestamp} ${channels}</span>
+                            <span style="font-weight:600;">Scadenza: ${note.scadenza ? new Date(note.scadenza).toLocaleDateString('it-IT') : 'N/A'}</span>
+                        </div>
+                        <div class="note-history-text">${F.escapeHtml(note.message)}</div>
+                    </div>`
+                }).join('');
+            },
+            displayNotesSummary: () => {
+                const container = document.getElementById('notesList');
+                if (!container) return;
 
-        async function saveToFirebase(documentName, data) {
-            if (!firebaseConnected) {
-                console.warn('⚠️ Firebase non connesso, salvataggio saltato');
-                return false;
-            }
-            
-            try {
-                console.log(`📤 Salvando ${documentName} su Firebase...`);
-                const docRef = window.firebaseDoc(window.firebaseDb, 'filemimmo', documentName);
-                await window.firebaseSetDoc(docRef, {
-                    data: JSON.stringify(data),
-                    timestamp: window.firebaseServerTimestamp(),
-                    version: 2
+                let allNotes = [];
+                Object.entries(communicationsHistory).forEach(([agencyName, notes]) => {
+                    notes.forEach(note => allNotes.push({ agencyName, ...note }));
                 });
                 
-                console.log(`✅ ${documentName} salvato su Firebase`);
-                return true;
+                allNotes.sort((a,b) => new Date(b.timestamp.split(', ')[0].split('/').reverse().join('-')) - new Date(a.timestamp.split(', ')[0].split('/').reverse().join('-')));
                 
-            } catch (error) {
-                console.error(`❌ Errore salvataggio ${documentName}:`, error.message);
-                
-                // Se è un errore di permessi, non mostrare il toast per non infastidire l'utente
-                if (!error.message.includes('permission')) {
-                    showToast('❌ Errore salvataggio dati', 'error');
-                }
-                return false;
-            }
-        }
-
-        async function loadFromFirebase(documentName) {
-            if (!firebaseConnected) return null;
-            
-            try {
-                const docRef = window.firebaseDoc(window.firebaseDb, 'filemimmo', documentName);
-                const docSnap = await window.firebaseGetDoc(docRef);
-                
-                if (docSnap.exists()) {
-                    const docData = docSnap.data();
-                    if (docData && docData.data) {
-                        const parsedData = JSON.parse(docData.data);
-                        console.log(`✅ ${documentName} caricato da Firebase`);
-                        return parsedData;
-                    }
-                }
-                return null;
-                
-            } catch (error) {
-                console.error(`❌ Errore caricamento ${documentName}:`, error);
-                return null;
-            }
-        }
-
-        async function saveAllToFirebase() {
-            if (!firebaseConnected) {
-                updateSyncStatus('error', '❌ Firebase non connesso');
-                return;
-            }
-            
-            updateSyncStatus('connecting', '🔄 Sincronizzazione in corso...');
-            
-            try {
-                const results = await Promise.all([
-                    saveToFirebase('clientsData', clientsData),
-                    saveToFirebase('agenciesData', agenciesData),
-                    saveToFirebase('editableData', editableData),
-                    saveToFirebase('personalNotes', personalNotes),
-                    saveToFirebase('communicationsHistory', communicationsHistory),
-                    saveToFirebase('paymentStatuses', paymentStatuses),
-                    saveToFirebase('fileInfo', {
-                        fileName: currentFileName,
-                        loadTime: fileLoadTime,
-                        lastSync: new Date().toISOString()
-                    })
-                ]);
-                
-                if (results.every(r => r === true)) {
-                    updateSyncStatus('connected', '✅ Sincronizzato su tutti i device');
-                    showToast('✅ Dati sincronizzati con successo!', 'success');
-                }
-                
-            } catch (error) {
-                console.error('❌ Errore sincronizzazione:', error);
-                updateSyncStatus('error', '❌ Errore sincronizzazione');
-                showToast('❌ Errore sincronizzazione', 'error');
-            }
-        }
-
-        async function loadAllFromFirebase() {
-            if (!firebaseConnected) return;
-            
-            updateSyncStatus('connecting', '🔄 Caricamento dati...');
-            
-            try {
-                const [
-                    loadedClientsData,
-                    loadedAgenciesData,
-                    loadedEditableData,
-                    loadedNotes,
-                    loadedHistory,
-                    loadedPaymentStatuses,
-                    loadedFileInfo
-                ] = await Promise.all([
-                    loadFromFirebase('clientsData'),
-                    loadFromFirebase('agenciesData'),
-                    loadFromFirebase('editableData'),
-                    loadFromFirebase('personalNotes'),
-                    loadFromFirebase('communicationsHistory'),
-                    loadFromFirebase('paymentStatuses'),
-                    loadFromFirebase('fileInfo')
-                ]);
-                
-                if (loadedClientsData && loadedClientsData.length > 0) {
-                    clientsData = loadedClientsData;
-                }
-                
-                if (loadedAgenciesData && loadedAgenciesData.length > 0) {
-                    agenciesData = loadedAgenciesData;
-                } else if (clientsData.length > 0) {
-                    groupDataByAgency();
-                }
-                
-                if (loadedEditableData) {
-                    editableData = loadedEditableData;
-                }
-                
-                if (loadedNotes) {
-                    personalNotes = loadedNotes;
-                }
-                
-                if (loadedHistory) {
-                    communicationsHistory = loadedHistory;
-                }
-                
-                if (loadedPaymentStatuses) {
-                    paymentStatuses = loadedPaymentStatuses;
-                }
-                
-                if (loadedFileInfo) {
-                    currentFileName = loadedFileInfo.fileName || '';
-                    fileLoadTime = loadedFileInfo.loadTime || '';
-                    updateFileInfo();
-                }
-                
-                if (agenciesData.length > 0) {
-                    setupFilters();
-                    filteredAgencies = [...agenciesData];
-                    displayAgencies(filteredAgencies);
-                    displayStats();
-                    displayNotesSummary();
-                    document.getElementById('controlsSection').style.display = 'block';
-                    document.getElementById('statsSection').style.display = 'block';
-                    
-                    updateSyncStatus('connected', '✅ Dati aggiornati da Firebase');
+                const notesSummarySection = document.getElementById('notesSummarySection');
+                if (allNotes.length > 0) {
+                    notesSummarySection.style.display = 'block';
+                    container.innerHTML = allNotes.slice(0, 5).map(note => {
+                        return `
+                        <div class="note-item" data-agency-name="${F.escapeHtml(note.agencyName)}" data-timestamp="${F.escapeHtml(note.timestamp)}">
+                            <button class="note-delete-btn-summary">🗑️</button>
+                            <div class="note-content-wrapper" onclick="openAgencyFromNote('${F.escapeHtml(note.agencyName)}')">
+                                <div class="note-agency">${F.escapeHtml(note.agencyName)}</div>
+                                <div class="note-content">${F.escapeHtml(note.message)}</div>
+                                <div class="note-meta">
+                                    <div class="note-date">${note.timestamp}</div>
+                                </div>
+                            </div>
+                        </div>`
+                    }).join('');
                 } else {
-                    updateSyncStatus('connected', '🔥 Firebase connesso - carica un file Excel');
+                    notesSummarySection.style.display = 'none';
                 }
-                
-            } catch (error) {
-                console.error('❌ Errore caricamento:', error);
-                updateSyncStatus('error', '❌ Errore caricamento dati');
+            },
+            setupUI: () => {
+                populateFilters();
+                applyFilters(); 
+                UI.displayNotesSummary();
+                ['statsSection', 'roleStatsSection', 'controlsSection'].forEach(id => document.getElementById(id).style.display = 'block');
             }
+        };
+
+        // DATA & LOGIC
+        function populateFilters() {
+            const createOptions = (values) => [...new Set(values.filter(Boolean))].sort().map(v => `<option value="${F.escapeHtml(v)}">${F.escapeHtml(v)}</option>`).join('');
+            document.getElementById('consultEditoriale').innerHTML = '<option value="">👤 Tutti i Consulenti Editoriali</option>' + createOptions(agenciesData.map(a => a.consultEditoriale));
+            document.getElementById('consultRete').innerHTML = '<option value="">👥 Tutti i Consulenti di Rete</option>' + createOptions(agenciesData.map(a => a.consultRete));
+            document.getElementById('teamManager').innerHTML = '<option value="">👨‍💼 Tutti i Team Manager</option>' + createOptions(agenciesData.map(a => a.teamManager || (editableData[a.name] && editableData[a.name].teamManager)));
+            document.getElementById('affiliatoFilter').innerHTML = '<option value="">🏢 Tutti gli Affiliati</option>' + createOptions(Object.values(editableData).map(d => d.affiliato));
         }
 
-        async function manualSync() {
-            showToast('🔄 Sincronizzazione manuale...', 'info');
-            await loadAllFromFirebase();
-        }
-
-        async function testFirebaseConnection() {
-            console.log('🧪 Test connessione Firebase...');
-            
-            // Verifica se Firebase è caricato
-            if (!window.firebaseInitialized) {
-                showToast('❌ Firebase SDK non caricato', 'error');
-                console.error('Firebase non inizializzato:', {
-                    firebaseDb: window.firebaseDb,
-                    firebaseDoc: window.firebaseDoc,
-                    firebaseReady: window.firebaseReady
-                });
-                return;
-            }
-            
-            try {
-                // Test scrittura
-                const testDoc = window.firebaseDoc(window.firebaseDb, 'test', 'connection-test');
-                await window.firebaseSetDoc(testDoc, {
-                    test: true,
-                    timestamp: new Date().toISOString(),
-                    userAgent: navigator.userAgent
-                });
-                
-                // Test lettura
-                const docSnap = await window.firebaseGetDoc(testDoc);
-                if (docSnap.exists()) {
-                    showToast('✅ Firebase funzionante!', 'success');
-                    console.log('✅ Test Firebase completato:', docSnap.data());
-                } else {
-                    showToast('⚠️ Firebase connesso ma documento non trovato', 'warning');
-                }
-                
-            } catch (error) {
-                showToast('❌ Errore connessione Firebase', 'error');
-                console.error('Errore test Firebase:', error);
-                console.error('Dettagli errore:', {
-                    message: error.message,
-                    code: error.code,
-                    stack: error.stack
-                });
-            }
-        }
-
-        // ========== UI FUNCTIONS ==========
-        function updateSyncStatus(type, message) {
-            const statusEl = document.getElementById('syncStatus');
-            statusEl.className = `sync-status ${type}`;
-            statusEl.innerHTML = `<span>${message}</span>`;
-        }
-
-        function updateFileInfo() {
-            if (currentFileName) {
-                const lastSync = new Date().toLocaleString('it-IT');
-                document.getElementById('fileInfo').innerHTML = 
-                    `📁 <strong>${currentFileName}</strong> | ⏰ Caricato: ${fileLoadTime} | 🔄 Ultima sincronizzazione: ${lastSync}`;
-                document.getElementById('fileInfo').style.display = 'block';
-            }
-        }
-
-        function groupDataByAgency() {
-            const grouped = {};
-            
-            clientsData.forEach(row => {
-                const agencyName = row['Ragione sociale'];
-                if (!agencyName) return;
-                
-                if (!grouped[agencyName]) {
-                    grouped[agencyName] = {
-                        name: agencyName,
-                        bdti: row['Bdti'],
-                        consultEditoriale: row['Nome Consulente Editoriale'],
-                        consultRete: row['Nome Consulente'],
-                        documents: [],
-                        totalDebt: 0,
-                        totalInsoluti: 0,
-                        totalPromesse: 0,
-                        status: row['Sieweb']
-                    };
-                }
-                
-                grouped[agencyName].documents.push(row);
-                grouped[agencyName].totalDebt += parseFloat(row['DEBITO']) || 0;
-                grouped[agencyName].totalInsoluti += parseFloat(row['INSOLUTI']) || 0;
-                grouped[agencyName].totalPromesse += parseFloat(row['Cifra promessa']) || 0;
-            });
-            
-            agenciesData = Object.values(grouped);
-            
-            // Imposta RID come default per tutte le nuove agenzie
-            agenciesData.forEach(agency => {
-                if (!paymentStatuses.hasOwnProperty(agency.name)) {
-                    paymentStatuses[agency.name] = 'rid';
-                }
-            });
-        }
-
-        function setupFilters() {
-            const consultEditoriale = document.getElementById('consultEditoriale');
-            const consultRete = document.getElementById('consultRete');
-            
-            const currentEditoriale = consultEditoriale.value;
-            const currentRete = consultRete.value;
-            
-            consultEditoriale.innerHTML = '<option value="">👤 Tutti i Consulenti Editoriali</option>';
-            consultRete.innerHTML = '<option value="">👥 Tutti i Consulenti di Rete</option>';
-            
-            if (agenciesData.length > 0) {
-                const uniqueConsultEditoriali = [...new Set(agenciesData.map(agency => agency.consultEditoriale))];
-                uniqueConsultEditoriali.filter(val => val).sort().forEach(value => {
-                    const option = document.createElement('option');
-                    option.value = value;
-                    option.textContent = value;
-                    consultEditoriale.appendChild(option);
-                });
-
-                const uniqueConsultRete = [...new Set(agenciesData.map(agency => agency.consultRete))];
-                uniqueConsultRete.filter(val => val).sort().forEach(value => {
-                    const option = document.createElement('option');
-                    option.value = value;
-                    option.textContent = value;
-                    consultRete.appendChild(option);
-                });
-            }
-            
-            consultEditoriale.value = currentEditoriale;
-            consultRete.value = currentRete;
-        }
-
-        function applyFilters() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const selectedConsultEditoriale = document.getElementById('consultEditoriale').value;
-            const selectedConsultRete = document.getElementById('consultRete').value;
-            const selectedPaymentStatus = document.getElementById('paymentStatus').value;
-            
-            filteredAgencies = agenciesData.filter(agency => {
-                const matchesSearch = !searchTerm || 
-                    agency.name.toLowerCase().includes(searchTerm) ||
-                    (agency.bdti && agency.bdti.toLowerCase().includes(searchTerm)) ||
-                    (agency.consultEditoriale && agency.consultEditoriale.toLowerCase().includes(searchTerm)) ||
-                    (agency.consultRete && agency.consultRete.toLowerCase().includes(searchTerm));
-                
-                const matchesConsultEditoriale = !selectedConsultEditoriale || 
-                    agency.consultEditoriale === selectedConsultEditoriale;
-                
-                const matchesConsultRete = !selectedConsultRete || 
-                    agency.consultRete === selectedConsultRete;
-                
-                const agencyStatus = paymentStatuses[agency.name] || 'rid'; // RID come default
-                const matchesPaymentStatus = !selectedPaymentStatus || 
-                    agencyStatus === selectedPaymentStatus;
-                
-                return matchesSearch && matchesConsultEditoriale && matchesConsultRete && matchesPaymentStatus;
-            });
-            
-            // Show/hide reset button
-            const hasFilters = searchTerm || selectedConsultEditoriale || selectedConsultRete || selectedPaymentStatus;
-            document.getElementById('filterReset').style.display = hasFilters ? 'flex' : 'none';
-            
-            displayAgencies(filteredAgencies);
-            displayStats();
-        }
-
-        function resetFilters() {
-            document.getElementById('searchInput').value = '';
-            document.getElementById('consultEditoriale').value = '';
-            document.getElementById('consultRete').value = '';
-            document.getElementById('paymentStatus').value = '';
-            document.getElementById('filterReset').style.display = 'none';
-            
-            filteredAgencies = [...agenciesData];
-            displayAgencies(filteredAgencies);
-            displayStats();
-            showToast('🔄 Filtri resettati', 'info');
-        }
-
-        function filterByPaymentStatus(status) {
-            document.getElementById('paymentStatus').value = status;
-            applyFilters();
-            showToast(`🔍 Filtro applicato: ${getPaymentStatusLabel(status)}`, 'info');
-        }
-
-        function getPaymentStatusLabel(status) {
-            const labels = {
-                'rid': '🟢 Pagamenti Regolari RID',
-                'bonifico': '🟢 Pagamenti Regolari Bonifico',
-                'promessi': '🟠 Pagamenti Promessi',
-                'sospeso': '🔴 Sospeso in Pubblicità'
-            };
-            return labels[status] || status;
-        }
-
-        function displayStats() {
-            const displayData = filteredAgencies.length > 0 ? filteredAgencies : agenciesData;
-            
-            const totalInsoluti = displayData.reduce((sum, agency) => sum + agency.totalInsoluti, 0);
-            const totalPromesse = displayData.reduce((sum, agency) => sum + agency.totalPromesse, 0);
-            const totalDebito = displayData.reduce((sum, agency) => sum + agency.totalDebt, 0);
-            
-            // Payment status counts (con RID come default)
-            const paymentCounts = {
-                rid: 0,
-                bonifico: 0,
-                promessi: 0,
-                sospeso: 0
-            };
-            
-            displayData.forEach(agency => {
-                const status = paymentStatuses[agency.name] || 'rid'; // RID come default
-                if (paymentCounts.hasOwnProperty(status)) {
-                    paymentCounts[status]++;
-                }
-            });
-            
-            const agenzieRegolari = paymentCounts.rid + paymentCounts.bonifico;
-            const agenziePromesse = paymentCounts.promessi;
-            const agenzieSospese = paymentCounts.sospeso;
-
-            document.querySelector('.stats').innerHTML = `
-                <div class="stat-card">
-                    <div class="stat-number danger">€${totalInsoluti.toLocaleString('it-IT', {minimumFractionDigits: 2})}</div>
-                    <div class="stat-label">Totale Insoluti</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">€${totalPromesse.toLocaleString('it-IT', {minimumFractionDigits: 2})}</div>
-                    <div class="stat-label">Totale Promesse</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">€${totalDebito.toLocaleString('it-IT', {minimumFractionDigits: 2})}</div>
-                    <div class="stat-label">Totale Debito</div>
-                </div>
-            `;
-
-            document.querySelector('.stats-payment').innerHTML = `
-                <div class="stat-card clickable" onclick="filterByPaymentStatus('rid,bonifico')" title="Clicca per filtrare">
-                    <div class="stat-number success">${agenzieRegolari}</div>
-                    <div class="stat-label">Agenzie Pagamenti Regolari</div>
-                </div>
-                <div class="stat-card clickable" onclick="filterByPaymentStatus('promessi')" title="Clicca per filtrare">
-                    <div class="stat-number warning">${agenziePromesse}</div>
-                    <div class="stat-label">Agenzie Promesse</div>
-                </div>
-                <div class="stat-card clickable" onclick="filterByPaymentStatus('sospeso')" title="Clicca per filtrare">
-                    <div class="stat-number danger">${agenzieSospese}</div>
-                    <div class="stat-label">Agenzie Sospese Pubblicità</div>
-                </div>
-            `;
-            
-            if (filteredAgencies.length > 0 && filteredAgencies.length < agenciesData.length) {
-                const filterInfo = document.createElement('div');
-                filterInfo.style.cssText = 'text-align: center; color: #8e8e93; font-size: 14px; margin-top: 8px; grid-column: 1 / -1;';
-                filterInfo.textContent = `Mostrando ${filteredAgencies.length} di ${agenciesData.length} agenzie`;
-                document.querySelector('.stats-payment').appendChild(filterInfo);
-            }
-        }
-
-        function displayNotesSummary() {
-            const allNotes = [];
-            
-            Object.entries(personalNotes).forEach(([agencyName, noteContent]) => {
-                if (noteContent && noteContent.trim()) {
-                    const dateMatch = noteContent.match(/\[Ultima modifica: (.+?)\]/);
-                    const agency = agenciesData.find(a => a.name === agencyName);
-                    
-                    allNotes.push({
-                        agencyName: agencyName,
-                        bdti: agency?.bdti || 'N/A',
-                        content: noteContent.replace(/\[.*?\]/g, '').trim(),
-                        date: dateMatch ? dateMatch[1] : 'N/A'
-                    });
-                }
-            });
-            
-            // Add communication history
-            Object.entries(communicationsHistory).forEach(([agencyName, history]) => {
-                if (history && history.length > 0) {
-                    const agency = agenciesData.find(a => a.name === agencyName);
-                    history.forEach(comm => {
-                        allNotes.push({
-                            agencyName: agencyName,
-                            bdti: agency?.bdti || 'N/A',
-                            content: comm.message || '',
-                            date: comm.timestamp || 'N/A'
-                        });
-                    });
-                }
-            });
-            
-            allNotes.sort((a, b) => {
-                const dateA = new Date(a.date.split(' ').reverse().join(' '));
-                const dateB = new Date(b.date.split(' ').reverse().join(' '));
-                return dateB - dateA;
-            });
-            
-            const notesContainer = document.getElementById('notesList');
-            if (allNotes.length > 0) {
-                document.getElementById('notesSummarySection').style.display = 'block';
-                notesContainer.innerHTML = allNotes.slice(0, 10).map(note => `
-                    <div class="note-item" onclick="openAgencyFromNote('${note.agencyName}')">
-                        <div class="note-agency">${note.agencyName} (${note.bdti})</div>
-                        <div class="note-content">${note.content.substring(0, 100)}${note.content.length > 100 ? '...' : ''}</div>
-                        <div class="note-meta">
-                            <div class="note-date">${note.date}</div>
-                        </div>
-                    </div>
-                `).join('');
-            } else {
-                document.getElementById('notesSummarySection').style.display = 'none';
-            }
-        }
-
-        function openAgencyFromNote(agencyName) {
-            const agency = agenciesData.find(a => a.name === agencyName);
-            if (agency) {
-                showAgencyDetails(agency);
-            }
-        }
-
-        function displayAgencies(agencies) {
-            const container = document.getElementById('agenciesContainer');
-            
-            if (agencies.length === 0) {
-                container.innerHTML = `
-                    <div class="empty-state">
-                        <h3>Nessuna agenzia trovata</h3>
-                        <p>Prova a modificare i filtri di ricerca</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            const sortedAgencies = agencies.sort((a, b) => {
-                const statusA = paymentStatuses[a.name] || 'rid';
-                const statusB = paymentStatuses[b.name] || 'rid';
-                
-                const getOrder = (status) => {
-                    if (status === 'sospeso') return 1;
-                    if (status === 'promessi') return 2;
-                    if (status === 'rid' || status === 'bonifico') return 3;
-                    return 4;
-                };
-                
-                return getOrder(statusA) - getOrder(statusB);
-            });
-            
-            container.innerHTML = '<div class="agencies-grid"></div>';
-            const grid = container.querySelector('.agencies-grid');
-            
-            sortedAgencies.forEach((agency) => {
-                // Default RID se non esiste stato
-                const paymentStatus = paymentStatuses[agency.name] || 'rid';
-                const card = document.createElement('div');
-                card.className = `agency-card payment-${paymentStatus}`;
-                
-                const agencyData = editableData[agency.name] || {};
-                const affiliato = agencyData.affiliato || '';
-                const telefonoCell = agencyData.telefonoCell || '';
-                const telefonoAgenzia = agencyData.telefonoAgenzia || '';
-                
-                let phoneLinksHtml = '';
-                if (telefonoCell || telefonoAgenzia) {
-                    phoneLinksHtml = '<div class="card-phone-links">';
-                    if (telefonoCell) {
-                        phoneLinksHtml += `<a href="tel:${telefonoCell}" class="card-phone-link" onclick="event.stopPropagation()">📱 ${telefonoCell}</a>`;
-                    }
-                    if (telefonoAgenzia) {
-                        phoneLinksHtml += `<a href="tel:${telefonoAgenzia}" class="card-phone-link" onclick="event.stopPropagation()">📞 ${telefonoAgenzia}</a>`;
-                    }
-                    phoneLinksHtml += '</div>';
-                }
-                
-                const debtClass = agency.totalInsoluti > 0 ? 'danger' : 'success';
-                const statusBadgeClass = agency.status === 'SOSP_AMM' ? 'suspended' : 'active';
-                
-                card.innerHTML = `
-                    <div class="agency-name">${agency.name}</div>
-                    <div class="agency-info">
-                        <div><strong>BDTI:</strong> ${agency.bdti || 'N/A'}</div>
-                        <div><strong>Consulente Editoriale:</strong> ${agency.consultEditoriale || 'N/A'}</div>
-                        <div><strong>Consulente di Rete:</strong> ${agency.consultRete || 'N/A'}</div>
-                        ${affiliato ? `<div><strong>Affiliato:</strong> ${affiliato}</div>` : ''}
-                    </div>
-                    <div class="debt-amount ${debtClass}">
-                        Insoluto: €${agency.totalInsoluti.toLocaleString('it-IT', {minimumFractionDigits: 2})}
-                    </div>
-                    ${phoneLinksHtml}
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;">
-                        <span class="status-badge ${statusBadgeClass}">${agency.status || 'N/A'}</span>
-                        <span style="font-size: 12px; color: #8e8e93;">${agency.documents.length} documenti</span>
-                    </div>
-                    
-                    <!-- Dropdown nascosto, appare solo al hover -->
-                    <div class="payment-status-dropdown" onclick="event.stopPropagation()">
-                        <select class="payment-status-select status-${paymentStatus}" 
-                                onchange="updatePaymentStatus('${agency.name}', this.value)">
-                            <option value="rid" ${paymentStatus === 'rid' ? 'selected' : ''}>🟢 RID</option>
-                            <option value="bonifico" ${paymentStatus === 'bonifico' ? 'selected' : ''}>🟢 Bonifico</option>
-                            <option value="promessi" ${paymentStatus === 'promessi' ? 'selected' : ''}>🟠 Promessi</option>
-                            <option value="sospeso" ${paymentStatus === 'sospeso' ? 'selected' : ''}>🔴 Sospeso</option>
-                        </select>
-                    </div>
-                `;
-                
-                card.addEventListener('click', () => {
-                    showAgencyDetails(agency);
-                });
-                
-                grid.appendChild(card);
-            });
-        }
-
-        function updatePaymentStatus(agencyName, status) {
-            // Sempre salva lo stato, anche se è RID (per non perdere le selezioni)
-            paymentStatuses[agencyName] = status;
-            showToast(`✅ Stato pagamento aggiornato: ${getPaymentStatusLabel(status)}`, 'success');
-            
-            saveToFirebase('paymentStatuses', paymentStatuses);
-            
-            // Update display
-            if (document.getElementById('paymentStatus').value) {
-                applyFilters();
-            } else {
-                displayAgencies(filteredAgencies.length > 0 ? filteredAgencies : agenciesData);
-            }
-            
-            displayStats();
-        }
-
-        function showAgencyDetails(agency) {
-            const modal = document.getElementById('agencyModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalContent = document.getElementById('modalContent');
-            
-            modalTitle.textContent = agency.name;
-            
-            const agencyData = editableData[agency.name] || {
-                affiliato: '',
-                telefonoCell: '',
-                telefonoAgenzia: ''
-            };
-            
-            let content = `
-                <!-- Contact Section -->
-                <div class="contact-section">
-                    <h3 class="contact-title">Informazioni di Contatto</h3>
-                    <div class="contact-grid">
-                        <input type="text" class="contact-input" id="affiliato" placeholder="Affiliato" 
-                               value="${agencyData.affiliato}" onchange="updateContactData('${agency.name}')">
-                        <input type="tel" class="contact-input" id="telefonoCell" placeholder="Telefono Cellulare" 
-                               value="${agencyData.telefonoCell}" onchange="updateContactData('${agency.name}')">
-                        <input type="tel" class="contact-input" id="telefonoAgenzia" placeholder="Telefono Agenzia" 
-                               value="${agencyData.telefonoAgenzia}" onchange="updateContactData('${agency.name}')">
-                    </div>
-                </div>
-                
-                <!-- Tabs -->
-                <div class="tabs">
-                    <button class="tab active" onclick="showTab('riepilogo')">Riepilogo</button>
-                    <button class="tab" onclick="showTab('documenti')">Documenti (${agency.documents.length})</button>
-                </div>
-                
-                <!-- Tab Riepilogo -->
-                <div id="tab-riepilogo" class="tab-content active">
-                    <div class="summary-grid">
-                        <div class="summary-item">
-                            <span class="summary-label">BDTI</span>
-                            <span class="summary-value">${agency.bdti || 'N/A'}</span>
-                        </div>
-                        <div class="summary-item">
-                            <span class="summary-label">CONSULENTE EDITORIALE</span>
-                            <span class="summary-value">${agency.consultEditoriale || 'N/A'}</span>
-                        </div>
-                        <div class="summary-item">
-                            <span class="summary-label">CONSULENTE DI RETE</span>
-                            <span class="summary-value">${agency.consultRete || 'N/A'}</span>
-                        </div>
-                        <div class="summary-item">
-                            <span class="summary-label">TOTALE DEBITO</span>
-                            <span class="summary-value">€${agency.totalDebt.toLocaleString('it-IT', {minimumFractionDigits: 2})}</span>
-                        </div>
-                        <div class="summary-item">
-                            <span class="summary-label">TOTALE INSOLUTI</span>
-                            <span class="summary-value" style="color: #ff3b30;">€${agency.totalInsoluti.toLocaleString('it-IT', {minimumFractionDigits: 2})}</span>
-                        </div>
-                        <div class="summary-item">
-                            <span class="summary-label">TOTALE PROMESSE</span>
-                            <span class="summary-value">€${agency.totalPromesse.toLocaleString('it-IT', {minimumFractionDigits: 2})}</span>
-                        </div>
-                        <div class="summary-item">
-                            <span class="summary-label">STATUS</span>
-                            <span class="summary-value">${agency.status || 'N/A'}</span>
-                        </div>
-                        <div class="summary-item">
-                            <span class="summary-label">NUMERO DOCUMENTI</span>
-                            <span class="summary-value">${agency.documents.length}</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Tab Documenti -->
-                <div id="tab-documenti" class="tab-content">
-            `;
-            
-            agency.documents.forEach((doc) => {
-                const documentNumber = doc['Documento'] || doc['Numero Documento'] || 'N/A';
-                const documentDate = doc['Data Documento'] || doc['Data documento'] || 'N/A';
-                const dueDate = doc['Data Scadenza'] || doc['Data scadenza'] || 'N/A';
-                const amount = parseFloat(doc['DEBITO']) || 0;
-                const insoluti = parseFloat(doc['INSOLUTI']) || 0;
-                const paymentType = doc['Pagamento'] || 'N/A';
-                
-                content += `
-                    <div class="document-item">
-                        <div class="document-header">
-                            <div class="document-title">Documento ${documentNumber}</div>
-                            <div class="document-amount">€${amount.toLocaleString('it-IT', {minimumFractionDigits: 2})}</div>
-                        </div>
-                        <div class="document-details">
-                            Data Documento: ${documentDate} | Scadenza: ${dueDate} | Insoluti: €${insoluti.toLocaleString('it-IT', {minimumFractionDigits: 2})} | Pagamento: ${paymentType}
-                        </div>
-                    </div>
-                `;
-            });
-            
-            content += `</div>`;
-            
-            // Notes Section
-            const currentNote = personalNotes[agency.name] || '';
-            const noteText = currentNote.replace(/\[.*?\]/g, '').trim();
-            
-            content += `
-                <div class="notes-section">
-                    <h3 class="notes-title">Note Personali</h3>
-                    <textarea class="notes-textarea" id="personalNote" 
-                              placeholder="Aggiungi note personali per questa agenzia...">${noteText}</textarea>
-                    <button class="btn-primary" onclick="saveNote('${agency.name}')" style="margin-top: 16px;">
-                        Salva Tutto
-                    </button>
-                </div>
-                
-                <!-- Message Section -->
-                <div class="message-section">
-                    <h3 class="notes-title">Genera Messaggio Situazione Debitoria</h3>
-                    <button class="btn-primary" onclick="generateMessage('${agency.name}')">
-                        Genera Messaggio
-                    </button>
-                    <div class="message-preview" id="messagePreview" style="display: none; margin-top: 16px;"></div>
-                    <button class="btn-primary" onclick="copyMessage()" style="display: none; margin-top: 12px;" id="copyMessageBtn">
-                        📋 Copia Messaggio
-                    </button>
-                </div>
-            `;
-            
-            modalContent.innerHTML = content;
-            modal.style.display = 'block';
-        }
-
-        function showTab(tabName) {
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            
-            event.target.classList.add('active');
-            document.getElementById(`tab-${tabName}`).classList.add('active');
-        }
-
-        function updateContactData(agencyName) {
-            const affiliato = document.getElementById('affiliato').value;
-            const telefonoCell = document.getElementById('telefonoCell').value;
-            const telefonoAgenzia = document.getElementById('telefonoAgenzia').value;
-            
-            if (!editableData[agencyName]) {
-                editableData[agencyName] = {};
-            }
-            
-            editableData[agencyName] = {
-                affiliato,
-                telefonoCell,
-                telefonoAgenzia
-            };
-            
-            saveToFirebase('editableData', editableData);
-            displayAgencies(filteredAgencies.length > 0 ? filteredAgencies : agenciesData);
-        }
-
-        function saveNote(agencyName) {
-            const noteText = document.getElementById('personalNote').value;
-            const now = new Date();
-            const timestamp = now.toLocaleString('it-IT');
-            
-            if (noteText.trim()) {
-                // Save to personal notes
-                personalNotes[agencyName] = `${noteText}\n\n[Ultima modifica: ${timestamp}]`;
-                
-                // Add to communication history
-                if (!communicationsHistory[agencyName]) {
-                    communicationsHistory[agencyName] = [];
-                }
-                
-                communicationsHistory[agencyName].unshift({
-                    message: noteText,
-                    timestamp: timestamp
-                });
-                
-                // Keep only last 10 communications
-                if (communicationsHistory[agencyName].length > 10) {
-                    communicationsHistory[agencyName] = communicationsHistory[agencyName].slice(0, 10);
-                }
-            } else {
-                delete personalNotes[agencyName];
-            }
-            
-            saveAllToFirebase();
-            displayNotesSummary();
-            showToast('✅ Note salvate!', 'success');
-        }
-
-        function generateMessage(agencyName) {
-            const agency = agenciesData.find(a => a.name === agencyName);
-            if (!agency) return;
-            
-            const today = new Date().toLocaleDateString('it-IT');
-            
-            let documentsText = '';
-            agency.documents.forEach(doc => {
-                const docNumber = doc['Documento'] || doc['Numero Documento'] || 'N/A';
-                const dueDate = doc['Data Scadenza'] || doc['Data scadenza'] || 'N/A';
-                const amount = parseFloat(doc['DEBITO']) || 0;
-                
-                documentsText += `• Documento ${docNumber} - Scadenza: ${dueDate} - Importo: €${amount.toLocaleString('it-IT', {minimumFractionDigits: 2})}\n`;
-            });
-            
-            const message = `${agency.bdti} ${agency.name},
-ti inoltro la Tua situazione aggiornata:
-
-**INSOLUTO ATTUALE (${today}):
-• Debito totale: €${agency.totalDebt.toLocaleString('it-IT', {minimumFractionDigits: 2})}
-• Insoluti: €${agency.totalInsoluti.toLocaleString('it-IT', {minimumFractionDigits: 2})}**
-• Modalità pagamento attuale: ${agency.documents[0]?.['Pagamento'] || 'N/A'}
-
-SCADENZE:
-${documentsText}
-Fammi sapere!!
-
-Grazie e buon lavoro.`;
-            
-            document.getElementById('messagePreview').textContent = message;
-            document.getElementById('messagePreview').style.display = 'block';
-            document.getElementById('copyMessageBtn').style.display = 'block';
-        }
-
-        function copyMessage() {
-            const message = document.getElementById('messagePreview').textContent;
-            navigator.clipboard.writeText(message).then(() => {
-                showToast('✅ Messaggio copiato!', 'success');
-            });
-        }
-
-        // Export Functions
-        function exportSospesi() {
-            const sospesi = agenciesData.filter(agency => (paymentStatuses[agency.name] || 'rid') === 'sospeso');
-            
-            if (sospesi.length === 0) {
-                showToast('⚠️ Nessuna agenzia sospesa da esportare', 'warning');
-                return;
-            }
-            
-            let csvContent = "data:text/csv;charset=utf-8,";
-            csvContent += "Ragione Sociale,BDTI,Insoluto,Consulente Editoriale,Consulente Rete\n";
-            
-            sospesi.forEach(agency => {
-                csvContent += `"${agency.name}","${agency.bdti || ''}",€${agency.totalInsoluti.toFixed(2)},"${agency.consultEditoriale || ''}","${agency.consultRete || ''}"\n`;
-            });
-            
-            const encodedUri = encodeURI(csvContent);
-            const link = document.createElement("a");
-            link.setAttribute("href", encodedUri);
-            link.setAttribute("download", `agenzie_sospesi_${new Date().toISOString().split('T')[0]}.csv`);
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            showToast(`✅ Esportate ${sospesi.length} agenzie sospese`, 'success');
-        }
-
-        function exportPromesse() {
-            const promesse = agenciesData.filter(agency => (paymentStatuses[agency.name] || 'rid') === 'promessi');
-            
-            if (promesse.length === 0) {
-                showToast('⚠️ Nessuna agenzia con promesse da esportare', 'warning');
-                return;
-            }
-            
-            let csvContent = "data:text/csv;charset=utf-8,";
-            csvContent += "Ragione Sociale,BDTI,Promessa,Note,Data Nota\n";
-            
-            promesse.forEach(agency => {
-                const note = personalNotes[agency.name] || '';
-                const noteText = note.replace(/\[.*?\]/g, '').trim().replace(/"/g, '""');
-                const dateMatch = note.match(/\[Ultima modifica: (.+?)\]/);
-                const date = dateMatch ? dateMatch[1] : '';
-                
-                csvContent += `"${agency.name}","${agency.bdti || ''}",€${agency.totalPromesse.toFixed(2)},"${noteText}","${date}"\n`;
-            });
-            
-            const encodedUri = encodeURI(csvContent);
-            const link = document.createElement("a");
-            link.setAttribute("href", encodedUri);
-            link.setAttribute("download", `agenzie_promesse_${new Date().toISOString().split('T')[0]}.csv`);
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            showToast(`✅ Esportate ${promesse.length} agenzie con promesse`, 'success');
-        }
-
-        function showNotesListModal() {
-            const modal = document.getElementById('notesListModal');
-            const content = document.getElementById('notesListContent');
-            
-            const allNotes = [];
-            
-            // Collect all notes with history
-            Object.entries(communicationsHistory).forEach(([agencyName, history]) => {
-                const agency = agenciesData.find(a => a.name === agencyName);
-                if (history && history.length > 0) {
-                    history.forEach(comm => {
-                        allNotes.push({
-                            agencyName,
-                            bdti: agency?.bdti || 'N/A',
-                            content: comm.message || '',
-                            date: comm.timestamp || 'N/A'
-                        });
-                    });
-                }
-            });
-            
-            // Also add current notes
-            Object.entries(personalNotes).forEach(([agencyName, noteContent]) => {
-                if (noteContent && noteContent.trim()) {
-                    const agency = agenciesData.find(a => a.name === agencyName);
-                    const dateMatch = noteContent.match(/\[Ultima modifica: (.+?)\]/);
-                    
-                    // Check if this note is already in history
-                    const noteText = noteContent.replace(/\[.*?\]/g, '').trim();
-                    const isInHistory = allNotes.some(n => 
-                        n.agencyName === agencyName && n.content === noteText
-                    );
-                    
-                    if (!isInHistory) {
-                        allNotes.push({
-                            agencyName,
-                            bdti: agency?.bdti || 'N/A',
-                            content: noteText,
-                            date: dateMatch ? dateMatch[1] : 'N/A'
-                        });
-                    }
-                }
-            });
-            
-            allNotes.sort((a, b) => {
-                const dateA = new Date(a.date.split(' ').reverse().join(' '));
-                const dateB = new Date(b.date.split(' ').reverse().join(' '));
-                return dateB - dateA;
-            });
-            
-            if (allNotes.length > 0) {
-                content.innerHTML = allNotes.map(note => `
-                    <div class="notes-list-item" onclick="openAgencyFromNote('${note.agencyName}'); closeNotesModal();">
-                        <div class="notes-list-agency">${note.agencyName} (${note.bdti})</div>
-                        <div class="notes-list-content">${note.content}</div>
-                        <div class="note-meta">
-                            <div class="notes-list-date">${note.date}</div>
-                        </div>
-                    </div>
-                `).join('');
-            } else {
-                content.innerHTML = '<p style="text-align: center; color: #8e8e93;">Nessuna nota presente</p>';
-            }
-            
-            modal.style.display = 'block';
-        }
-
-        function closeModal() {
-            document.getElementById('agencyModal').style.display = 'none';
-        }
-
-        function closeNotesModal() {
-            document.getElementById('notesListModal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            const agencyModal = document.getElementById('agencyModal');
-            const notesModal = document.getElementById('notesListModal');
-            if (event.target === agencyModal) {
-                closeModal();
-            }
-            if (event.target === notesModal) {
-                closeNotesModal();
-            }
-        }
-
-        // ========== FILE HANDLING ==========
         function processFile(file) {
-            document.getElementById('fileStatus').textContent = '⏳ Caricamento in corso...';
-            
-            currentFileName = file.name;
-            fileLoadTime = new Date().toLocaleString('it-IT');
-            
+            document.getElementById('fileStatus').textContent = '⏳ Caricamento...';
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = (e) => {
                 try {
-                    const data = new Uint8Array(e.target.result);
-                    const workbook = XLSX.read(data, {type: 'array'});
-                    
-                    const worksheet = workbook.Sheets['Foglio1'];
-                    const jsonData = XLSX.utils.sheet_to_json(worksheet);
-                    
-                    clientsData = jsonData.filter(row => {
-                        return Object.values(row).some(value => 
-                            value !== null && value !== undefined && value !== '' && value !== '(vuoto)'
-                        );
+                    const jsonData = XLSX.utils.sheet_to_json(XLSX.read(new Uint8Array(e.target.result), {type: 'array'}).Sheets['Foglio1']);
+                    const clientsData = jsonData.filter(row => Object.values(row).some(v => v));
+                    if (!clientsData.length) throw new Error("Nessun dato valido nel file");
+                    agenciesData = Object.values(clientsData.reduce((acc, row) => {
+                        const name = row['Ragione sociale'];
+                        if (!name) return acc;
+                        if (!acc[name]) acc[name] = { name, bdti: row['Bdti'], consultEditoriale: row['Nome Consulente Editoriale'], consultRete: row['Nome Consulente'], teamManager: row['Team Manager'] || row['Team'] || '', documents: [], totalDebt: 0, totalInsoluti: 0, totalPromesse: 0, status: row['Sieweb'] };
+                        acc[name].documents.push(row);
+                        acc[name].totalDebt += parseFloat(row['DEBITO']) || 0;
+                        acc[name].totalInsoluti += parseFloat(row['INSOLUTI']) || 0;
+                        acc[name].totalPromesse += parseFloat(row['Cifra promessa']) || 0;
+                        return acc;
+                    }, {}));
+                    agenciesData.forEach(agency => {
+                        if (!paymentStatuses[agency.name]) paymentStatuses[agency.name] = 'rid';
+                        if (!agencyStatuses[agency.name]) agencyStatuses[agency.name] = 'attivo-pagato';
                     });
-                    
-                    if (clientsData.length > 0) {
-                        groupDataByAgency();
-                        filteredAgencies = [...agenciesData];
-                        
-                        // Imposta RID come default per tutte le nuove agenzie
-                        agenciesData.forEach(agency => {
-                            if (!paymentStatuses.hasOwnProperty(agency.name)) {
-                                paymentStatuses[agency.name] = 'rid';
-                            }
-                        });
-                        
-                        document.getElementById('fileStatus').textContent = `✅ ${agenciesData.length} agenzie caricate`;
-                        updateFileInfo();
-                        
-                        saveAllToFirebase();
-                        
-                        setupFilters();
-                        displayStats();
-                        displayAgencies(filteredAgencies);
-                        displayNotesSummary();
-                        document.getElementById('controlsSection').style.display = 'block';
-                        document.getElementById('statsSection').style.display = 'block';
-                        
-                        showToast(`✅ ${agenciesData.length} agenzie caricate con successo!`, 'success');
-                    } else {
-                        document.getElementById('fileStatus').textContent = '❌ Nessun dato valido nel file';
-                        showToast('❌ Nessun dato valido trovato nel file', 'error');
-                    }
-                } catch (error) {
-                    console.error('Errore caricamento:', error);
-                    document.getElementById('fileStatus').textContent = '❌ Errore nel caricamento';
-                    showToast('❌ Errore nel caricamento del file', 'error');
-                }
+                    fileInfo = { name: file.name, loadTime: new Date().toLocaleString('it-IT') };
+                    filteredAgencies = [...agenciesData];
+                    UI.setupUI();
+                    FB.saveAll();
+                    document.getElementById('fileStatus').textContent = `✅ ${agenciesData.length} agenzie caricate.`;
+                } catch (err) { document.getElementById('fileStatus').textContent = `❌ ${err.message}`; }
             };
             reader.readAsArrayBuffer(file);
         }
 
-        // ========== EVENT LISTENERS ==========
-        document.getElementById('fileInput').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) processFile(file);
-        });
+        function applyFilters() {
+            const S = Object.fromEntries(['searchInput','consultEditoriale','consultRete','teamManager','affiliatoFilter','paymentStatus','agencyStatusFilter'].map(id=>[id, document.getElementById(id).value]));
+            filteredAgencies = agenciesData.filter(agency => {
+                const agencyData = editableData[agency.name] || {};
+                const teamManager = agency.teamManager || agencyData.teamManager || '';
+                const searchString = `${agency.name} ${agency.bdti} ${agency.consultEditoriale} ${agency.consultRete} ${teamManager} ${agencyData.affiliato}`.toLowerCase();
+                return (!S.searchInput || searchString.includes(S.searchInput.toLowerCase())) &&
+                       (!S.consultEditoriale || agency.consultEditoriale === S.consultEditoriale) &&
+                       (!S.consultRete || agency.consultRete === S.consultRete) &&
+                       (!S.teamManager || teamManager === S.teamManager) &&
+                       (!S.affiliatoFilter || agencyData.affiliato === S.affiliatoFilter) &&
+                       (!S.paymentStatus || (paymentStatuses[agency.name] || 'rid') === S.paymentStatus) &&
+                       (!S.agencyStatusFilter || (agencyStatuses[agency.name] || 'attivo-pagato') === S.agencyStatusFilter);
+            });
+            document.getElementById('filterReset').style.display = Object.values(S).some(v => v) ? 'flex' : 'none';
+            UI.displayStats(); UI.displayRoleStats(); UI.displayAgencies(); UI.displayNotesSummary();
+        }
 
-        document.getElementById('searchInput').addEventListener('input', function() {
-            applyFilters();
-        });
+        function resetFilters() { ['searchInput','consultEditoriale','consultRete','teamManager','affiliatoFilter','paymentStatus','agencyStatusFilter'].forEach(id => document.getElementById(id).value = ''); applyFilters(); }
+        
+        function showAgencyDetails(agency) {
+            document.getElementById('modalTitle').textContent = agency.name;
+            const modalBody = document.getElementById('modalBody'), agencyData = editableData[agency.name] || {}, currentStatus = agencyStatuses[agency.name] || 'attivo-pagato';
+            const agencyId = F.escapeHtml(agency.name);
+            modalBody.innerHTML = `
+                <div class="modal-section"><div class="status-buttons">
+                    <button class="status-btn attivo-pagato ${currentStatus === 'attivo-pagato' ? 'active' : ''}" onclick="updateAgencyStatus('${agencyId}', 'attivo-pagato', this)">🟢 ATTIVO PAGATO</button>
+                    <button class="status-btn attivo-promessa ${currentStatus === 'attivo-promessa' ? 'active' : ''}" onclick="updateAgencyStatus('${agencyId}', 'attivo-promessa', this)">🟠 ATTIVO PROMESSA</button>
+                    <button class="status-btn sospeso-insoluto ${currentStatus === 'sospeso-insoluto' ? 'active' : ''}" onclick="updateAgencyStatus('${agencyId}', 'sospeso-insoluto', this)">🔴 SOSPESO INSOLUTO</button>
+                </div></div>
+                <div class="modal-section">
+                    <div class="tabs">
+                        <button class="tab active" onclick="showTab(this, 'riepilogo_${agencyId}')">Riepilogo</button>
+                        <button class="tab" onclick="showTab(this, 'documenti_${agencyId}')">Documenti (${agency.documents.length})</button>
+                        <button class="tab" onclick="showTab(this, 'note_${agencyId}')">Note</button>
+                    </div>
 
-        document.getElementById('consultEditoriale').addEventListener('change', function() {
-            applyFilters();
-        });
+                    <div id="riepilogo_${agencyId}" class="tab-content active">
+                        <div class="summary-grid">
+                            <div class="summary-item"><span class="summary-label">BDTI</span><span class="summary-value">${agency.bdti||'N/A'}</span></div>
+                            <div class="summary-item"><span class="summary-label">C. Editoriale</span><span class="summary-value">${F.escapeHtml(agency.consultEditoriale)||'N/A'}</span></div>
+                            <div class="summary-item"><span class="summary-label">C. Rete</span><span class="summary-value">${F.escapeHtml(agency.consultRete)||'N/A'}</span></div>
+                            <div class="summary-item"><span class="summary-label">T. Manager</span><span class="summary-value">${F.escapeHtml(agency.teamManager || agencyData.teamManager)||'N/A'}</span></div>
+                            <div class="summary-item"><span class="summary-label">Totale Debito</span><span class="summary-value">€${agency.totalDebt.toLocaleString('it-IT',{minimumFractionDigits:2})}</span></div>
+                            <div class="summary-item"><span class="summary-label">Totale Insoluti</span><span class="summary-value" style="color:var(--danger-color)">€${agency.totalInsoluti.toLocaleString('it-IT',{minimumFractionDigits:2})}</span></div>
+                        </div>
+                        <h3 class="modal-section-title" style="margin-top: 24px;">Note Inserite</h3>
+                        <div class="notes-history-list" style="max-height: 150px;">${UI.displayNotesHistory(agency.name, true)}</div>
+                    </div>
 
-        document.getElementById('consultRete').addEventListener('change', function() {
-            applyFilters();
-        });
-
-        document.getElementById('paymentStatus').addEventListener('change', function() {
-            applyFilters();
-        });
-
-        // Filter by payment status for multiple values
-        window.filterByPaymentStatus = function(statuses) {
-            // Reset all filters first
-            document.getElementById('searchInput').value = '';
-            document.getElementById('consultEditoriale').value = '';
-            document.getElementById('consultRete').value = '';
-            
-            // Handle multiple statuses
-            if (statuses.includes(',')) {
-                const statusArray = statuses.split(',');
-                filteredAgencies = agenciesData.filter(agency => {
-                    const agencyStatus = paymentStatuses[agency.name] || 'rid'; // RID come default
-                    return statusArray.includes(agencyStatus);
-                });
-                displayAgencies(filteredAgencies);
-                displayStats();
-                document.getElementById('filterReset').style.display = 'flex';
-                showToast('🔍 Filtro applicato: Pagamenti Regolari', 'info');
-            } else {
-                document.getElementById('paymentStatus').value = statuses;
-                applyFilters();
-            }
+                    <div id="documenti_${agencyId}" class="tab-content">${agency.documents.map(doc => `<div class="document-item"><div class="document-header"><div class="document-title">Doc. ${doc['Documento']||'N/A'}</div><div class="document-amount">€${(parseFloat(doc['INSOLUTI'])||0).toLocaleString('it-IT',{minimumFractionDigits:2})}</div></div><div class="document-details">Data: ${doc['Data Documento']||'N/A'} | Scadenza: ${doc['Data Scadenza']||'N/A'}</div></div>`).join('')}</div>
+                    
+                    <div id="note_${agencyId}" class="tab-content" data-agency-name="${agencyId}">
+                        <h3 class="modal-section-title">Nuova Nota</h3>
+                        <div class="note-form">
+                            <textarea class="notes-textarea" id="note_text_${agencyId}" placeholder="Aggiungi una nota..."></textarea>
+                            <div class="due-date-group">
+                                <label for="scadenza_${agencyId}">Data di Scadenza</label>
+                                <input type="date" class="contact-input" id="scadenza_${agencyId}">
+                            </div>
+                            <div class="channel-checkboxes">
+                                <label><input type="checkbox" id="channel_whatsapp_${agencyId}" checked> 💬 WhatsApp</label>
+                                <label><input type="checkbox" id="channel_mail_${agencyId}"> 📧 Mail</label>
+                                <label><input type="checkbox" id="channel_voce_${agencyId}"> 📞 Voce</label>
+                            </div>
+                            <button class="btn-primary" onclick="saveNote('${agencyId}')">Salva Nota</button>
+                        </div>
+                        <h3 class="modal-section-title" style="margin-top:24px;">Cronologia Note</h3>
+                        <div class="notes-history-list">${UI.displayNotesHistory(agency.name, false)}</div>
+                    </div>
+                </div>
+                <div class="modal-section"><h3 class="modal-section-title">Genera Messaggi</h3>
+                    <div class="message-buttons">
+                        <button class="message-btn" onclick="generateMessage('${agencyId}', 'situazione')">📊 Situazione Debitoria</button>
+                        <button class="message-btn" onclick="generateMessage('${agencyId}', 'sollecito')">⚠️ Sollecito Sospensione</button>
+                        <button class="message-btn" onclick="generateMessage('${agencyId}', 'sospensione')">🚫 Sospensione</button>
+                    </div>
+                    <div class="message-preview" id="messagePreview_${agencyId}" style="display:none;"></div>
+                    <button class="btn-primary" id="copyMessageBtn_${agencyId}" style="display:none; margin-top: 12px;" onclick="copyMessage('${agencyId}')">Copia Messaggio</button>
+                </div>`;
+            document.getElementById('agencyModal').style.display = 'block';
+        }
+        
+        // GLOBAL FUNCTIONS
+        window.updatePaymentStatus = (agencyName, status) => { paymentStatuses[agencyName] = status; FB.save('paymentStatuses').then(applyFilters); };
+        window.updateAgencyStatus = (agencyName, status, btn) => { agencyStatuses[agencyName] = status; FB.save('agencyStatuses'); btn.parentElement.querySelectorAll('.status-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); applyFilters(); };
+        window.updateContactData = (agencyName) => { if (!editableData[agencyName]) editableData[agencyName] = {}; editableData[agencyName].affiliato = document.getElementById(`affiliato_${agencyName}`).value; editableData[agencyName].telefonoCell = document.getElementById(`telefonoCell_${agencyName}`).value; editableData[agencyName].telefonoAgenzia = document.getElementById(`telefonoAgenzia_${agencyName}`).value; editableData[agencyName].teamManager = document.getElementById(`teamManager_${agencyName}`).value; FB.save('editableData'); };
+        window.saveNote = (agencyName) => { 
+            const noteText = document.getElementById(`note_text_${agencyName}`).value.trim();
+            if (!noteText) return F.showToast('⚠️ Inserisci una nota');
+            const newNote = {
+                message: noteText,
+                timestamp: new Date().toLocaleString('it-IT'),
+                scadenza: document.getElementById(`scadenza_${agencyName}`).value,
+                channels: {
+                    whatsapp: document.getElementById(`channel_whatsapp_${agencyName}`).checked,
+                    mail: document.getElementById(`channel_mail_${agencyName}`).checked,
+                    voce: document.getElementById(`channel_voce_${agencyName}`).checked
+                }
+            };
+            if (!communicationsHistory[agencyName]) communicationsHistory[agencyName] = [];
+            communicationsHistory[agencyName].unshift(newNote); 
+            FB.save('communicationsHistory').then(() => {
+                document.querySelector(`#note_${agencyName} .notes-history-list`).innerHTML = UI.displayNotesHistory(agencyName, false);
+                document.querySelector(`#riepilogo_${agencyName} .notes-history-list`).innerHTML = UI.displayNotesHistory(agencyName, true);
+                UI.displayNotesSummary();
+                document.getElementById(`note_text_${agencyName}`).value = '';
+                F.showToast('✅ Nota salvata con successo');
+            });
         };
-
-        // ========== AUTO-SAVE ==========
-        setInterval(() => {
-            if (firebaseConnected && agenciesData.length > 0) {
-                console.log('💾 Auto-save in corso...');
-                saveAllToFirebase();
-            }
-        }, 300000); // 5 minuti
-
-        // ========== INITIALIZATION ==========
-        window.addEventListener('DOMContentLoaded', function() {
-            console.log('📄 DOM caricato, attendo Firebase...');
-        });
-
-        window.addEventListener('load', async function() {
-            console.log('🚀 AdminFilePro v2.0 avviato');
-            console.log('📱 Device:', navigator.userAgent);
-            console.log('🌐 URL:', window.location.href);
-            console.log('🔒 Protocollo:', window.location.protocol);
+        window.showTab = (btn, tabId) => { const p = btn.closest('.modal-section'); p.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); btn.classList.add('active'); p.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active')); document.getElementById(tabId).classList.add('active'); };
+        window.generateMessage = (agencyName, type) => {
+            const agency = agenciesData.find(a => a.name === agencyName); if (!agency) return;
+            let documentsText = agency.documents.map(doc => `• Doc. ${doc['Documento'] || 'N/A'} del ${doc['Data Documento'] || 'N/A'} - € ${(parseFloat(doc['DEBITO']) || 0).toLocaleString('it-IT')}`).join('\n');
+            const messages = {
+                situazione: `${agency.bdti} ${agency.name},\nti inoltro la Tua situazione aggiornata:\n\n**INSOLUTO ATTUALE (${new Date().toLocaleDateString('it-IT')}):\n• Debito totale: €${agency.totalDebt.toLocaleString('it-IT')}\n• Insoluti: €${agency.totalInsoluti.toLocaleString('it-IT')}**\n\nSCADENZE:\n${documentsText}\n\nFammi sapere!!\nGrazie e buon lavoro.`,
+                sollecito: `Ciao l'amministrazione ti ha scritto in merito all'insoluto una mail con il dettaglio del dovuto\n*Cliente:* ${agency.name}\n*Codice BDTI:* ${agency.bdti}\n*Dettaglio documenti scaduti:*\n${documentsText}\n*TOTALE DEBITO: € ${agency.totalDebt.toLocaleString('it-IT')}*\nMi fai sapere come regolarci per il saldo!! Se non mi dai riscontro a breve scatta la sospensione definitiva.\nGrazie e buon lavoro.`,
+                sospensione: `Ciao *Cliente:* ${agency.name}\n*Codice BDTI:* ${agency.bdti}\n*Dettaglio documenti scaduti:*\n${documentsText}\n*TOTALE DEBITO: € ${agency.totalDebt.toLocaleString('it-IT')}*\nTi Informo del saldo e che non avendo ricevuto riscontro sei stato SOSPESO da ADV.\nResto a Tua disposizione per qualsiasi ulteriore informazione e per concordare il rientro del dovuto.\nGrazie e buon lavoro.`
+            };
+            const preview = document.getElementById(`messagePreview_${agencyName}`);
+            const copyBtn = document.getElementById(`copyMessageBtn_${agencyName}`);
+            preview.textContent = messages[type] || "Messaggio non disponibile.";
+            preview.style.display = 'block';
+            copyBtn.style.display = 'block';
+        };
+        window.copyMessage = (agencyName) => {
+            const textToCopy = document.getElementById(`messagePreview_${agencyName}`).textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => F.showToast('✅ Messaggio copiato!'));
+        };
+        window.exportRoleStats = () => {
+            const dataToExport = filteredAgencies.length > 0 ? filteredAgencies : agenciesData;
+            if (dataToExport.length === 0) return F.showToast('⚠️ Nessun dato da esportare');
+            const headers = "Ragione Sociale;Codice BDTI;Consulente Editoriale;Consulente di Rete;Team Manager;Importo Insoluto\n";
+            let total = 0;
+            const rows = dataToExport.filter(a => a.totalInsoluti > 0).map(agency => {
+                total += agency.totalInsoluti;
+                const teamManager = agency.teamManager || (editableData[agency.name] && editableData[agency.name].teamManager) || '';
+                return `"${agency.name}";"${agency.bdti}";"${agency.consultEditoriale || ''}";"${agency.consultRete || ''}";"${teamManager}";"${agency.totalInsoluti.toFixed(2).replace('.',',')}"`;
+            });
+            const footer = `\n;;;;TOTALE GENERALE;${total.toFixed(2).replace('.',',')}`;
+            F.downloadCSV(headers + rows.join('\n') + footer, `dettaglio_insoluti.csv`);
+        };
+        window.exportSospesi = () => {
+            const dataToExport = filteredAgencies.length > 0 ? filteredAgencies : agenciesData;
+            const sospesi = dataToExport.filter(a => paymentStatuses[a.name] === 'sospeso');
+            if (sospesi.length === 0) return F.showToast('⚠️ Nessuna agenzia sospesa da esportare');
+            let csv = "Ragione Sociale;BDTI;Insoluto\n";
+            sospesi.forEach(a => { csv += `"${a.name}";"${a.bdti}";"${a.totalInsoluti.toFixed(2).replace('.',',')}"\n`; });
+            F.downloadCSV(csv, 'agenzie_sospese.csv');
+        };
+        window.exportPromesse = () => {
+            const dataToExport = filteredAgencies.length > 0 ? filteredAgencies : agenciesData;
+            const promesse = dataToExport.filter(a => paymentStatuses[a.name] === 'promessi');
+            if (promesse.length === 0) return F.showToast('⚠️ Nessuna agenzia con promesse da esportare');
+            let csv = "Ragione Sociale;BDTI;Insoluto\n";
+            promesse.forEach(a => { csv += `"${a.name}";"${a.bdti}";"${a.totalInsoluti.toFixed(2).replace('.',',')}"\n`; });
+            F.downloadCSV(csv, 'agenzie_promesse.csv');
+        };
+        window.showNotesListModal = () => {
+            const modal = document.getElementById('notesListModal');
+            const body = document.getElementById('notesListModalBody');
+            let allNotes = [];
+            Object.entries(communicationsHistory).forEach(([agencyName, notes]) => {
+                notes.forEach(note => { if(note.scadenza) allNotes.push({ agencyName, ...note }); });
+            });
+            allNotes.sort((a, b) => new Date(a.scadenza) - new Date(b.scadenza));
             
-            // Attendi un attimo per assicurarsi che Firebase sia caricato
-            setTimeout(async () => {
-                await initFirebase();
-            }, 1000);
-        });
-
-        // Online/Offline handling
-        window.addEventListener('online', async function() {
-            console.log('🌐 Connessione ripristinata');
-            showToast('🌐 Connessione internet ripristinata', 'success');
-            await initFirebase();
-        });
-
-        window.addEventListener('offline', function() {
-            console.log('📵 Connessione persa');
-            updateSyncStatus('error', '📵 Modalità offline');
-            firebaseConnected = false;
-            showToast('📵 Modalità offline - i dati non verranno sincronizzati', 'warning');
-        });
-
-        // Prevent accidental navigation
-        window.addEventListener('beforeunload', function (e) {
-            if (agenciesData.length > 0) {
-                e.preventDefault();
-                e.returnValue = '';
+            if (allNotes.length === 0) {
+                body.innerHTML = '<div class="empty-state"><h3>Nessuna nota con data di scadenza.</h3><p>Puoi aggiungere una scadenza alle note dalla scheda di dettaglio di un\'agenzia.</p></div>';
+            } else {
+                body.innerHTML = `<div style="padding: 8px;">${allNotes.map(note => {
+                    return `<div class="document-item" style="cursor:pointer" onclick="openAgencyFromNote('${F.escapeHtml(note.agencyName)}')">
+                        <div class="document-header">
+                            <div class="document-title">${F.escapeHtml(note.agencyName)}</div>
+                            <div style="font-weight:600; color: var(--danger-color);">Scadenza: ${new Date(note.scadenza).toLocaleDateString('it-IT')}</div>
+                        </div>
+                        <div class="document-details">${F.escapeHtml(note.message)}</div>
+                    </div>`
+                }).join('')}</div>`;
             }
+            modal.style.display = 'block';
+        };
+        window.manualSync = () => { FB.saveAll(); };
+        window.closeModal = () => document.getElementById('agencyModal').style.display = 'none';
+        window.closeNotesModal = () => document.getElementById('notesListModal').style.display = 'none';
+        window.resetFilters = resetFilters;
+        window.openAgencyFromNote = (agencyName) => {
+            closeNotesModal();
+            const agency = agenciesData.find(a => a.name === agencyName);
+            if(agency) showAgencyDetails(agency);
+        };
+        
+        // APP INITIALIZATION
+        document.addEventListener('DOMContentLoaded', async () => {
+            F.updateSyncStatus('connecting', '🔄 Inizializzazione...');
+            const firebaseReadyPromise = new Promise(resolve => {
+                if(window.firebaseReady) resolve(true);
+                else window.addEventListener('firebaseready', () => resolve(true));
+            });
+            firebaseReady = await firebaseReadyPromise;
+
+            if (!firebaseReady) { F.updateSyncStatus('error', '❌ Connessione a Firebase fallita'); return; }
+
+            try {
+                F.updateSyncStatus('connected', '🔥 Connesso. Carico dati...');
+                const dataMap = await Promise.all([FB.load('agenciesData'), FB.load('editableData'), FB.load('paymentStatuses'), FB.load('agencyStatuses'), FB.load('communicationsHistory'), FB.load('fileInfo')]);
+                [agenciesData, editableData, paymentStatuses, agencyStatuses, communicationsHistory, fileInfo] = dataMap.map(d => d || (d === null ? {} : (Array.isArray(d) ? [] : d)));
+                
+                if (agenciesData && agenciesData.length > 0) {
+                    filteredAgencies = [...agenciesData];
+                    lastSyncTime = new Date().toLocaleString('it-IT');
+                    UI.setupUI();
+                    UI.updateFileInfo();
+                    F.updateSyncStatus('connected', `✅ Dati aggiornati da Firebase`);
+                } else {
+                    F.updateSyncStatus('connected', '🔥 Pronto. Carica un file Excel.');
+                }
+            } catch (error) {
+                console.error("Errore nel caricamento dati:", error);
+                F.updateSyncStatus('error', '❌ Errore caricamento dati.');
+            }
+            
+            ['consultEditoriale','consultRete','teamManager','affiliatoFilter','paymentStatus','agencyStatusFilter'].forEach(id => document.getElementById(id).addEventListener('change', applyFilters));
+            document.getElementById('searchInput').addEventListener('input', applyFilters);
+            document.getElementById('fileInput').addEventListener('change', (e) => e.target.files[0] && processFile(e.target.files[0]));
+            
+            document.body.addEventListener('click', (event) => {
+                const modalDeleteBtn = event.target.closest('.note-delete-btn');
+                const summaryDeleteBtn = event.target.closest('.note-delete-btn-summary');
+
+                if (modalDeleteBtn) {
+                    const agencyName = modalDeleteBtn.closest('[data-agency-name]').dataset.agencyName;
+                    const noteIndex = parseInt(modalDeleteBtn.dataset.index, 10);
+                    if(confirm('Eliminare questa nota?')){
+                        communicationsHistory[agencyName].splice(noteIndex, 1);
+                        FB.save('communicationsHistory').then(() => {
+                            document.querySelector(`#note_${F.escapeHtml(agencyName)} .notes-history-list`).innerHTML = UI.displayNotesHistory(agencyName, false);
+                            document.querySelector(`#riepilogo_${F.escapeHtml(agencyName)} .notes-history-list`).innerHTML = UI.displayNotesHistory(agencyName, true);
+                            UI.displayNotesSummary();
+                            F.showToast('🗑️ Nota eliminata');
+                        });
+                    }
+                }
+
+                if (summaryDeleteBtn) {
+                    event.stopPropagation();
+                    const noteItem = summaryDeleteBtn.closest('.note-item');
+                    const agencyName = noteItem.dataset.agencyName;
+                    const timestamp = noteItem.dataset.timestamp;
+                    if(confirm('Eliminare questa nota?')){
+                        const noteIndex = communicationsHistory[agencyName].findIndex(note => note.timestamp === timestamp);
+                        if (noteIndex > -1) {
+                            communicationsHistory[agencyName].splice(noteIndex, 1);
+                            FB.save('communicationsHistory').then(() => {
+                                UI.displayNotesSummary();
+                                F.showToast('🗑️ Nota eliminata');
+                            });
+                        }
+                    }
+                }
+            });
         });
     </script>
 </body>

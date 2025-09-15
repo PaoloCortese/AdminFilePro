@@ -181,13 +181,13 @@
         .note-history-item:last-child { border: none; }
         .note-delete-btn { position: absolute; top: 12px; right: 0; background: none; border: none; color: #aaa; cursor: pointer; font-size: 16px; }
         .note-delete-btn:hover { color: var(--danger-color); }
-        .note-history-meta { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; }
+        .note-history-meta { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; padding-right: 24px; }
         .note-history-text { font-size: 15px; white-space: pre-wrap; line-height: 1.5; padding-right: 24px; }
         .message-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
         .message-btn { flex: 1; min-width: 150px; padding: 12px; background-color: #f0f0f5; color: var(--primary-color); border: none; border-radius: 10px; cursor: pointer; font-size: 14px; font-weight: 500; }
         .message-preview { background-color: #f0f0f5; border-radius: 10px; padding: 16px; margin-top: 16px; white-space: pre-wrap; font-size: 14px; line-height: 1.6; border: 1px solid var(--border-color); }
-        .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.75); color: white; padding: 12px 24px; border-radius: 10px; z-index: 2000; opacity: 0; transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
-        .toast.show { opacity: 1; transform: translateX(-50%) translateY(-20px); }
+        .toast { position: fixed; bottom: 20px; left: 50%; transform: translate(-50%, 10px); background: rgba(0,0,0,0.75); color: white; padding: 12px 24px; border-radius: 10px; z-index: 2000; opacity: 0; transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
+        .toast.show { opacity: 1; transform: translate(-50%, -20px); }
 
         @media (max-width: 768px) {
             .container { padding: 16px; }
@@ -425,7 +425,11 @@
                     notes.forEach(note => allNotes.push({ agencyName, ...note }));
                 });
                 
-                allNotes.sort((a,b) => new Date(b.timestamp.split(', ')[0].split('/').reverse().join('-')) - new Date(a.timestamp.split(', ')[0].split('/').reverse().join('-')));
+                allNotes.sort((a,b) => {
+                    const dateA = a.timestamp.split(', ')[0].split('/').reverse().join('-');
+                    const dateB = b.timestamp.split(', ')[0].split('/').reverse().join('-');
+                    return new Date(dateB) - new Date(dateA);
+                });
                 
                 const notesSummarySection = document.getElementById('notesSummarySection');
                 if (allNotes.length > 0) {
@@ -475,8 +479,23 @@
                     agenciesData = Object.values(clientsData.reduce((acc, row) => {
                         const name = row['Ragione sociale'];
                         if (!name) return acc;
-                        if (!acc[name]) acc[name] = { name, bdti: row['Bdti'], consultEditoriale: row['Nome Consulente Editoriale'], consultRete: row['Nome Consulente'], teamManager: row['Team Manager'] || row['Team'] || '', documents: [], totalDebt: 0, totalInsoluti: 0, totalPromesse: 0, status: row['Sieweb'] };
-                        acc[name].documents.push(row);
+                        if (!acc[name]) acc[name] = { 
+                            name, 
+                            bdti: row['Bdti'], 
+                            consultEditoriale: row['Nome Consulente Editoriale'], 
+                            consultRete: row['Nome Consulente'], 
+                            teamManager: row['Team Manager'] || row['Team'] || '', 
+                            documents: [], totalDebt: 0, totalInsoluti: 0, totalPromesse: 0, 
+                            status: row['Sieweb'] 
+                        };
+                        const doc = {
+                            'Documento': row['Documento'],
+                            'DEBITO': row['DEBITO'],
+                            'INSOLUTI': row['INSOLUTI'],
+                            'Data Documento': row['Data Documento'] || row['Data documento'] || row['Data'],
+                            'Data Scadenza': row['Data Scadenza'] || row['Data scadenza'] || row['Scadenza'],
+                        };
+                        acc[name].documents.push(doc);
                         acc[name].totalDebt += parseFloat(row['DEBITO']) || 0;
                         acc[name].totalInsoluti += parseFloat(row['INSOLUTI']) || 0;
                         acc[name].totalPromesse += parseFloat(row['Cifra promessa']) || 0;

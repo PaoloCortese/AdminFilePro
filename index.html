@@ -79,12 +79,14 @@
         .file-label:hover { background-color: #0056cc; transform: scale(1.03); }
         .file-input { display: none; }
 
-        .stats, .stats-payment { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 24px; }
-        .stats-payment { padding-top: 20px; border-top: 1px solid #e5e5ea; }
+        .stats, .stats-payment, .stats-contracts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 24px; }
+        .stats-payment, .stats-contracts { padding-top: 20px; border-top: 1px solid #e5e5ea; }
         .stat-card { background-color: var(--card-background); border-radius: 16px; padding: 24px; text-align: left; box-shadow: var(--shadow-light); border: 1px solid var(--border-color); cursor: pointer; transition: all 0.2s ease; }
         .stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
         .stat-number { font-size: 28px; font-weight: 600; margin-bottom: 6px; }
         .stat-number.danger { color: var(--danger-color); }
+        .stat-number.warning { color: var(--warning-color); }
+        .stat-number.success { color: var(--success-color); }
         .stat-label { font-size: 15px; font-weight: 500; color: var(--text-secondary); }
 
         .controls { background-color: var(--card-background); border-radius: 20px; padding: 24px; margin-bottom: 24px; box-shadow: var(--shadow-light); border: 1px solid var(--border-color); }
@@ -119,11 +121,16 @@
         .debt-amount { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
         .debt-amount.danger { color: var(--danger-color); }
         .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; }
-        .status-badges { display: flex; gap: 6px; }
+        .status-badges { display: flex; gap: 6px; flex-wrap: wrap; }
         .status-badge { display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 12px; font-weight: 500; }
         .status-badge.attivo { background-color: #e3f2fd; color: var(--primary-color); }
         .status-badge.sospeso { background-color: #ffeeee; color: var(--danger-color); }
         .status-badge.promessa { background-color: #fff8f0; color: var(--warning-color); }
+        .contract-badge { font-size: 11px; color: var(--text-secondary); display: flex; align-items: center; gap: 4px; margin-top: 8px; padding: 4px 8px; border-radius: 6px; background-color: #f0f0f5; width: fit-content; }
+        .contract-badge.compilato { background-color: #fff8f0; color: #f9a825; }
+        .contract-badge.inviato { background-color: #fff3e0; color: #ff9500; }
+        .contract-badge.firmato { background-color: #eef7ee; color: #34c759; }
+        .contract-badge.lavorato { background-color: #e3f2fd; color: var(--primary-color); }
         .empty-state { text-align: center; padding: 80px 20px; color: var(--text-secondary); }
         .empty-state h3 { font-size: 20px; margin-bottom: 12px; color: var(--text-primary); }
         .notes-summary-section { background-color: var(--card-background); border-radius: 20px; padding: 24px; margin-bottom: 24px; box-shadow: var(--shadow-light); border: 1px solid var(--border-color); }
@@ -147,8 +154,8 @@
         .modal-body { flex: 1; overflow-y: auto; padding: 8px; }
         .modal-section { background-color: var(--card-background); padding: 24px; margin: 8px; border-radius: 16px; }
         .modal-section-title { font-size: 17px; font-weight: 600; margin-bottom: 16px; }
-        .status-buttons { display: flex; gap: 8px; }
-        .status-btn { flex: 1; padding: 12px; border: 2px solid; border-radius: 10px; background-color: var(--card-background); cursor: pointer; font-weight: 600; font-size: 14px; transition: all 0.2s ease; text-align: center; }
+        .status-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+        .status-btn { flex: 1; padding: 12px; border: 2px solid; border-radius: 10px; background-color: var(--card-background); cursor: pointer; font-weight: 600; font-size: 14px; transition: all 0.2s ease; text-align: center; min-width: 120px; }
         .status-btn.active { color: white; }
         .status-btn.attivo-pagato { border-color: var(--success-color); color: var(--success-color); }
         .status-btn.attivo-pagato.active { background-color: var(--success-color); }
@@ -156,6 +163,28 @@
         .status-btn.attivo-promessa.active { background-color: var(--warning-color); }
         .status-btn.sospeso-insoluto { border-color: var(--danger-color); color: var(--danger-color); }
         .status-btn.sospeso-insoluto.active { background-color: var(--danger-color); }
+        .status-btn.compilato { border-color: #f9a825; color: #f9a825; }
+        .status-btn.compilato.active { background-color: #f9a825; }
+        .status-btn.inviato { border-color: var(--warning-color); color: var(--warning-color); }
+        .status-btn.inviato.active { background-color: var(--warning-color); }
+        .status-btn.firmato { border-color: var(--success-color); color: var(--success-color); }
+        .status-btn.firmato.active { background-color: var(--success-color); }
+        .status-btn.lavorato { border-color: var(--primary-color); color: var(--primary-color); }
+        .status-btn.lavorato.active { background-color: var(--primary-color); }
+        .contract-year-selector { margin-bottom: 20px; }
+        .contract-year-selector label { font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block; color: var(--text-primary); }
+        .contract-year-selector select { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border-color); font-size: 15px; background-color: var(--background-color); }
+        .note-category { margin-bottom: 12px; }
+        .note-category label { font-size: 13px; font-weight: 600; margin-bottom: 8px; display: block; color: var(--text-primary); }
+        .note-category-options { display: flex; gap: 12px; flex-wrap: wrap; }
+        .note-category-option { flex: 1; min-width: 100px; }
+        .note-category-option input[type="radio"] { display: none; }
+        .note-category-option label { display: block; padding: 10px; border: 2px solid var(--border-color); border-radius: 8px; text-align: center; cursor: pointer; font-size: 13px; font-weight: 500; transition: all 0.2s ease; }
+        .note-category-option input[type="radio"]:checked + label { border-color: var(--primary-color); background-color: var(--primary-color); color: white; }
+        .note-category-badge { display: inline-block; padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; margin-right: 8px; }
+        .note-category-badge.amministrazione { background-color: #e3f2fd; color: var(--primary-color); }
+        .note-category-badge.contratti { background-color: #fff8f0; color: var(--warning-color); }
+        .note-category-badge.altro { background-color: #f0f0f5; color: var(--text-secondary); }
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
         .contact-input { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border-color); font-size: 15px; }
         .btn-save { background-color: var(--primary-color); color: white; border: none; padding: 12px 24px; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 14px; transition: all 0.2s ease; }
@@ -173,7 +202,8 @@
         .document-title, .document-amount { font-size: 16px; font-weight: 600; }
         .document-amount { color: var(--danger-color); }
         .document-details { font-size: 13px; color: #6e6e73; margin-top: 4px; }
-        .note-form { display: grid; gap: 12px; grid-template-areas: 'text text' 'due channels' 'button button'; }
+        .note-form { display: grid; gap: 12px; grid-template-areas: 'category category' 'text text' 'due channels' 'button button'; }
+        .note-category { grid-area: category; }
         .notes-textarea { grid-area: text; width: 100%; min-height: 100px; padding: 12px; border: 1px solid var(--border-color); border-radius: 10px; font-size: 15px; resize: vertical; }
         .due-date-group { grid-area: due; display: flex; flex-direction: column; gap: 4px; }
         .channel-checkboxes { grid-area: channels; display: flex; flex-direction: column; gap: 4px; }
@@ -183,7 +213,7 @@
         .note-history-item:last-child { border: none; }
         .note-delete-btn { position: absolute; top: 12px; right: 0; background: none; border: none; color: #aaa; cursor: pointer; font-size: 16px; }
         .note-delete-btn:hover { color: var(--danger-color); }
-        .note-history-meta { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; padding-right: 24px; }
+        .note-history-meta { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; padding-right: 24px; flex-wrap: wrap; gap: 8px; }
         .note-history-text { font-size: 15px; white-space: pre-wrap; line-height: 1.5; padding-right: 24px; }
         .message-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
         .message-btn { flex: 1; min-width: 150px; padding: 12px; background-color: #f0f0f5; color: var(--primary-color); border: none; border-radius: 10px; cursor: pointer; font-size: 14px; font-weight: 500; }
@@ -191,13 +221,18 @@
         .toast { position: fixed; bottom: 20px; left: 50%; transform: translate(-50%, 10px); background: rgba(0,0,0,0.75); color: white; padding: 12px 24px; border-radius: 10px; z-index: 2000; opacity: 0; transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
         .toast.show { opacity: 1; transform: translate(-50%, -20px); }
 
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideDown { from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
         @media (max-width: 768px) {
             .container { padding: 16px; }
-            .agencies-grid, .filters-row, .stats, .stats-payment, .role-stats-grid, .summary-grid { grid-template-columns: 1fr; }
+            .agencies-grid, .filters-row, .stats, .stats-payment, .stats-contracts, .role-stats-grid, .summary-grid { grid-template-columns: 1fr; }
             .contact-grid { grid-template-columns: 1fr 1fr; }
             .modal-content { width: 100%; height: 100%; max-height: 100%; margin: 0; border-radius: 0; }
             .header-controls { flex-direction: column; align-items: stretch; }
-            .note-form { grid-template-areas: 'text' 'due' 'channels' 'button'; }
+            .note-form { grid-template-areas: 'category' 'text' 'due' 'channels' 'button'; }
+            .status-buttons { flex-direction: column; }
+            .status-btn { min-width: unset; }
         }
     </style>
 </head>
@@ -222,7 +257,12 @@
             </div>
         </div>
 
-        <div id="statsSection" style="display: none;"><div class="stats"></div><div class="stats-payment"></div></div>
+        <div id="statsSection" style="display: none;">
+            <div class="stats"></div>
+            <div class="stats-payment"></div>
+            <div class="stats-contracts"></div>
+        </div>
+        
         <div id="roleStatsSection" class="role-stats" style="display: none;">
             <div class="role-stats-title"><span>💼</span><span>Insoluti per Ruolo</span></div>
             <div class="role-stats-grid">
@@ -231,6 +271,7 @@
                 <div class="role-stat-item"><div class="role-stat-label">Team Manager</div><div id="statsTeamManager" class="role-stat-list"></div></div>
             </div>
         </div>
+        
         <div id="notesSummarySection" class="notes-summary-section" style="display: none;">
             <div class="notes-summary-title">
                 <span>📋</span>
@@ -238,6 +279,7 @@
             </div>
             <div id="notesList" class="notes-list"></div>
         </div>
+        
         <div id="controlsSection" class="controls" style="display: none;">
              <input type="text" id="searchInput" class="search-input" placeholder="🔍 Cerca agenzia, BDTI, consulente...">
             <div class="filters-row">
@@ -252,7 +294,7 @@
                     <option value="rid">🟢 Pagamenti Regolari (RID)</option>
                     <option value="bonifico">🟢 Pagamenti Regolari (Bonifico)</option>
                     <option value="promessi">🟠 Pagamenti Promessi</option>
-                                                    <option value="sospeso">🔴 PRESospeso</option>
+                    <option value="sospeso">🔴 PRESospeso</option>
                 </select>
                 <select id="agencyStatusFilter" class="filter-select">
                     <option value="">📊 Tutti gli Stati Agenzia</option>
@@ -263,6 +305,7 @@
             </div>
             <div id="filterReset" style="display: none; justify-content: center; margin-top: 16px;"><button class="btn-reset" onclick="resetFilters()">🔄 Reset Filtri</button></div>
         </div>
+        
         <div id="agenciesContainer">
              <div class="empty-state" id="initial-loading-message">
                 <h3>🔄 Caricando dati da Firebase...</h3>
@@ -271,12 +314,29 @@
         </div>
     </div>
 
-    <div id="agencyModal" class="modal"><div class="modal-content"><div class="modal-header"><h2 id="modalTitle"></h2><button class="close-modal" onclick="closeModal()">&times;</button></div><div id="modalBody" class="modal-body"></div></div></div>
-    <div id="notesListModal" class="modal"><div class="modal-content" style="max-width: 800px;"><div class="modal-header"><h2 class="modal-title">📋 Elenco Note con Scadenza</h2><button class="close-modal" onclick="closeNotesModal()">&times;</button></div><div id="notesListModalBody" class="modal-body"></div></div></div>
+    <div id="agencyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modalBody" class="modal-body"></div>
+        </div>
+    </div>
+    
+    <div id="notesListModal" class="modal">
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h2 class="modal-title">📋 Elenco Note con Scadenza</h2>
+                <button class="close-modal" onclick="closeNotesModal()">&times;</button>
+            </div>
+            <div id="notesListModalBody" class="modal-body"></div>
+        </div>
+    </div>
     
     <script>
         // GLOBAL STATE & UTILITIES
-        let agenciesData = [], editableData = {}, paymentStatuses = {}, agencyStatuses = {}, communicationsHistory = {};
+        let agenciesData = [], editableData = {}, paymentStatuses = {}, agencyStatuses = {}, communicationsHistory = {}, contractStatuses = {};
         let filteredAgencies = [];
         let fileInfo = { name: '', loadTime: '' };
         let lastSyncTime = '';
@@ -284,7 +344,13 @@
 
         const F = {
             escapeHtml: (text) => text ? text.toString().replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'})[m]) : '',
-            updateSyncStatus: (type, message) => { const el = document.getElementById('syncStatus'); if(el) { el.className = `sync-status ${type}`; el.innerHTML = `<span>${message}</span>`; }},
+            updateSyncStatus: (type, message) => { 
+                const el = document.getElementById('syncStatus'); 
+                if(el) { 
+                    el.className = `sync-status ${type}`; 
+                    el.innerHTML = `<span>${message}</span>`; 
+                }
+            },
             downloadCSV: (csvContent, fileName) => {
                 const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
                 const link = document.createElement("a");
@@ -307,7 +373,6 @@
                     }, 2000);
                 }, 10);
             },
-            // Funzione per creare selettore CSS sicuro
             createSafeSelector: (text) => {
                 return text.replace(/[^a-zA-Z0-9]/g, '_');
             }
@@ -341,7 +406,17 @@
             async saveAll() {
                 if (!firebaseReady) return false;
                 F.updateSyncStatus('connecting', '🔄 Sincronizzazione...');
-                const results = await Promise.all(Object.entries({ agenciesData, editableData, paymentStatuses, agencyStatuses, communicationsHistory, fileInfo }).map(([k, v]) => FB.save(k, v)));
+                const results = await Promise.all(
+                    Object.entries({ 
+                        agenciesData, 
+                        editableData, 
+                        paymentStatuses, 
+                        agencyStatuses, 
+                        communicationsHistory, 
+                        contractStatuses, 
+                        fileInfo 
+                    }).map(([k, v]) => FB.save(k, v))
+                );
                 const allSaved = results.every(result => result === true);
                 if (allSaved) {
                     lastSyncTime = new Date().toLocaleString('it-IT');
@@ -354,6 +429,72 @@
                 }
             }
         };
+
+        // FUNZIONI CONTRATTI
+        window.loadContractStatus = (agencyName) => {
+            const safeAgencyId = F.createSafeSelector(agencyName);
+            const yearSelect = document.getElementById(`contract_year_${safeAgencyId}`);
+            const selectedYear = yearSelect.value;
+            const buttonsContainer = document.getElementById(`contract_status_buttons_${safeAgencyId}`);
+            
+            const currentStatus = contractStatuses[agencyName] && contractStatuses[agencyName][selectedYear] ? contractStatuses[agencyName][selectedYear] : null;
+            
+            buttonsContainer.innerHTML = `
+                <button class="status-btn compilato ${currentStatus === 'compilato' ? 'active' : ''}" onclick="updateContractStatus('${F.escapeHtml(agencyName)}', '${selectedYear}', 'compilato', this); event.stopPropagation();">🟡 COMPILATO</button>
+                <button class="status-btn inviato ${currentStatus === 'inviato' ? 'active' : ''}" onclick="updateContractStatus('${F.escapeHtml(agencyName)}', '${selectedYear}', 'inviato', this); event.stopPropagation();">🟠 INVIATO</button>
+                <button class="status-btn firmato ${currentStatus === 'firmato' ? 'active' : ''}" onclick="updateContractStatus('${F.escapeHtml(agencyName)}', '${selectedYear}', 'firmato', this); event.stopPropagation();">🟢 FIRMATO</button>
+                <button class="status-btn lavorato ${currentStatus === 'lavorato' ? 'active' : ''}" onclick="updateContractStatus('${F.escapeHtml(agencyName)}', '${selectedYear}', 'lavorato', this); event.stopPropagation();">🔵 LAVORATO</button>
+            `;
+        };
+        
+        window.updateContractStatus = async (agencyName, year, status, btn) => {
+            if (!contractStatuses[agencyName]) contractStatuses[agencyName] = {};
+            contractStatuses[agencyName][year] = status;
+            
+            const success = await FB.save('contractStatuses', contractStatuses);
+            if (success) {
+                btn.parentElement.querySelectorAll('.status-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const currentYear = new Date().getFullYear();
+                if (parseInt(year) === currentYear) {
+                    updateExternalCardContract(agencyName, status);
+                }
+                
+                UI.displayStats();
+                F.showToast('✅ Stato contratto salvato');
+            } else {
+                F.showToast('❌ Errore nel salvataggio');
+            }
+        };
+        
+        function updateExternalCardContract(agencyName, status) {
+            const agencyCards = document.querySelectorAll('.agency-card');
+            agencyCards.forEach(card => {
+                const cardTitleElement = card.querySelector('.agency-name');
+                if (cardTitleElement && cardTitleElement.textContent.trim() === agencyName) {
+                    const currentYear = new Date().getFullYear();
+                    const existingBadge = card.querySelector('.contract-badge');
+                    
+                    const contractStatusLabel = {
+                        'compilato': 'Compilato',
+                        'inviato': 'Inviato',
+                        'firmato': 'Firmato',
+                        'lavorato': 'Lavorato'
+                    };
+                    
+                    const contractBadgeHTML = status ? `<div class="contract-badge ${status}">
+                        CTR ADV ${currentYear}: ${status === 'compilato' ? '🟡' : status === 'inviato' ? '🟠' : status === 'firmato' ? '🟢' : '🔵'} ${contractStatusLabel[status]}
+                    </div>` : '';
+                    
+                    if (existingBadge) {
+                        existingBadge.outerHTML = contractBadgeHTML;
+                    } else if (contractBadgeHTML) {
+                        card.insertAdjacentHTML('beforeend', contractBadgeHTML);
+                    }
+                }
+            });
+        }
 
         // UI RENDERING
         const UI = {
@@ -369,14 +510,44 @@
             displayStats: () => {
                 const data = filteredAgencies.length > 0 ? filteredAgencies : agenciesData;
                 const totals = data.reduce((acc, agency) => {
-                    acc.insoluti += agency.totalInsoluti; acc.promesse += agency.totalPromesse; acc.debito += agency.totalDebt;
+                    acc.insoluti += agency.totalInsoluti; 
+                    acc.promesse += agency.totalPromesse; 
+                    acc.debito += agency.totalDebt;
                     acc.payments[paymentStatuses[agency.name] || 'rid'] = (acc.payments[paymentStatuses[agency.name] || 'rid'] || 0) + 1;
                     return acc;
                 }, { insoluti: 0, promesse: 0, debito: 0, payments: {} });
+                
                 const formatCurrency = (num) => `€${(num || 0).toLocaleString('it-IT', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-                document.querySelector('.stats').innerHTML = `<div class="stat-card"><div class="stat-label">Totale Insoluti</div><div class="stat-number danger">${formatCurrency(totals.insoluti)}</div></div> <div class="stat-card"><div class="stat-label">Totale Promesse</div><div class="stat-number warning">${formatCurrency(totals.promesse)}</div></div> <div class="stat-card"><div class="stat-label">Totale Debito</div><div class="stat-number">${formatCurrency(totals.debito)}</div></div>`;
+                
+                document.querySelector('.stats').innerHTML = `
+                    <div class="stat-card"><div class="stat-label">Totale Insoluti</div><div class="stat-number danger">${formatCurrency(totals.insoluti)}</div></div>
+                    <div class="stat-card"><div class="stat-label">Totale Promesse</div><div class="stat-number warning">${formatCurrency(totals.promesse)}</div></div>
+                    <div class="stat-card"><div class="stat-label">Totale Debito</div><div class="stat-number">${formatCurrency(totals.debito)}</div></div>
+                `;
+                
                 const regolari = (totals.payments.rid || 0) + (totals.payments.bonifico || 0);
-                document.querySelector('.stats-payment').innerHTML = `<div class="stat-card" onclick="filterByPaymentStatus('rid,bonifico')"><div class="stat-label">Agenzie Regolari</div><div class="stat-number success">${regolari}</div></div> <div class="stat-card" onclick="filterByPaymentStatus('promessi')"><div class="stat-label">Agenzie Promesse</div><div class="stat-number warning">${totals.payments.promessi || 0}</div></div> <div class="stat-card" onclick="filterByPaymentStatus('sospeso')"><div class="stat-label">Agenzie Sospese</div><div class="stat-number danger">${totals.payments.sospeso || 0}</div></div>`;
+                document.querySelector('.stats-payment').innerHTML = `
+                    <div class="stat-card" onclick="filterByPaymentStatus('rid')"><div class="stat-label">Agenzie Regolari</div><div class="stat-number success">${regolari}</div></div>
+                    <div class="stat-card" onclick="filterByPaymentStatus('promessi')"><div class="stat-label">Agenzie Promesse</div><div class="stat-number warning">${totals.payments.promessi || 0}</div></div>
+                    <div class="stat-card" onclick="filterByPaymentStatus('sospeso')"><div class="stat-label">Agenzie Sospese</div><div class="stat-number danger">${totals.payments.sospeso || 0}</div></div>
+                `;
+                
+                // Statistiche contratti
+                const currentYear = new Date().getFullYear();
+                const contractStats = data.reduce((acc, agency) => {
+                    const contractData = contractStatuses[agency.name];
+                    if (contractData && contractData[currentYear]) {
+                        const status = contractData[currentYear];
+                        acc[status] = (acc[status] || 0) + 1;
+                    }
+                    return acc;
+                }, {});
+                
+                document.querySelector('.stats-contracts').innerHTML = `
+                    <div class="stat-card"><div class="stat-label">Contratti Compilati</div><div class="stat-number" style="color: #f9a825;">${contractStats.compilato || 0}</div></div>
+                    <div class="stat-card"><div class="stat-label">Contratti Inviati</div><div class="stat-number warning">${contractStats.inviato || 0}</div></div>
+                    <div class="stat-card"><div class="stat-label">Contratti Firmati + Lavorati</div><div class="stat-number success">${(contractStats.firmato || 0) + (contractStats.lavorato || 0)}</div></div>
+                `;
             },
             displayRoleStats: () => {
                 const roles = { statsConsulentiEditoriali: {}, statsConsulentiRete: {}, statsTeamManager: {} };
@@ -400,16 +571,35 @@
                 const loadingMessage = document.getElementById('initial-loading-message');
                 if (loadingMessage) loadingMessage.style.display = 'none';
 
-                if (filteredAgencies.length === 0 && agenciesData.length > 0) { container.innerHTML = `<div class="empty-state"><h3>Nessuna agenzia trovata</h3><p>Prova a modificare i filtri di ricerca</p></div>`; return; }
+                if (filteredAgencies.length === 0 && agenciesData.length > 0) { 
+                    container.innerHTML = `<div class="empty-state"><h3>Nessuna agenzia trovata</h3><p>Prova a modificare i filtri di ricerca</p></div>`; 
+                    return; 
+                }
+                
                 const getOrder = (status) => ({'sospeso': 1, 'promessi': 2, 'rid': 3, 'bonifico': 3}[status] || 4);
                 filteredAgencies.sort((a, b) => getOrder(paymentStatuses[a.name]) - getOrder(paymentStatuses[b.name]));
+                
                 const grid = document.createElement('div');
                 grid.className = 'agencies-grid';
                 grid.innerHTML = filteredAgencies.map(agency => {
                     const paymentStatus = paymentStatuses[agency.name] || 'rid';
                     const agencyStatus = (agencyStatuses[agency.name] || 'attivo-pagato').split('-')[0];
-                    // Crea un ID sicuro per l'agenzia
                     const safeAgencyId = F.createSafeSelector(agency.name);
+                    
+                    // Contratto info
+                    const currentYear = new Date().getFullYear();
+                    const contractData = contractStatuses[agency.name];
+                    const contractStatus = contractData && contractData[currentYear] ? contractData[currentYear] : null;
+                    const contractStatusLabel = {
+                        'compilato': 'Compilato',
+                        'inviato': 'Inviato',
+                        'firmato': 'Firmato',
+                        'lavorato': 'Lavorato'
+                    };
+                    const contractBadge = contractStatus ? `<div class="contract-badge ${contractStatus}">
+                        CTR ADV ${currentYear}: ${contractStatus === 'compilato' ? '🟡' : contractStatus === 'inviato' ? '🟠' : contractStatus === 'firmato' ? '🟢' : '🔵'} ${contractStatusLabel[contractStatus]}
+                    </div>` : '';
+                    
                     return `
                     <div class="agency-card payment-${paymentStatus}" onclick="showAgencyDetails(agenciesData.find(a => a.name === '${F.escapeHtml(agency.name)}'))">
                         <div class="payment-status-dropdown" onclick="event.stopPropagation()">
@@ -431,14 +621,15 @@
                         <div class="card-footer">
                             <div class="status-badges">
                                 <span class="status-badge ${agencyStatus}">${
-                                    agencyStatus === 'attivo-pagato' ? 'ATTIVO PAGATO' :
-                                    agencyStatus === 'attivo-promessa' ? 'ATTIVO PROMESSA' :
-                                    agencyStatus === 'sospeso-insoluto' ? 'SOSPESO INSOLUTO' : 'ATTIVO'
+                                    agencyStatus === 'attivo' ? 'ATTIVO PAGATO' :
+                                    agencyStatus === 'sospeso' ? 'SOSPESO INSOLUTO' :
+                                    agencyStatus === 'promessa' ? 'ATTIVO PROMESSA' : 'ATTIVO'
                                 }</span>
                                 <span class="status-badge attivo">${agency.status || 'N/A'}</span>
                             </div>
                             <span style="font-size:12px;color:var(--text-secondary);">${agency.documents.length} doc.</span>
                         </div>
+                        ${contractBadge}
                     </div>`;
                 }).join('');
                 container.innerHTML = '';
@@ -453,10 +644,15 @@
                         if(k === 'mail') return '📧';
                         if(k === 'voce') return '📞';
                     }).join(' ') : '';
+                    const category = note.category || 'altro';
+                    const categoryBadge = `<span class="note-category-badge ${category}">${
+                        category === 'amministrazione' ? '📋 AMM' :
+                        category === 'contratti' ? '📄 CONTR' : '📌 ALTRO'
+                    }</span>`;
                     return `<div class="note-history-item" data-note-index="${index}">
                         ${isReadOnly ? '' : `<button class="note-delete-btn" onclick="deleteNoteFromHistory('${F.escapeHtml(agencyName)}', ${index})" title="Elimina">🗑️</button>`}
                         <div class="note-history-meta">
-                            <span>Creato: ${note.timestamp} ${channels}</span>
+                            <span>${categoryBadge}${note.timestamp} ${channels}</span>
                             <span style="font-weight:600;">Scadenza: ${note.scadenza ? new Date(note.scadenza).toLocaleDateString('it-IT') : 'N/A'}</span>
                         </div>
                         <div class="note-history-text">${F.escapeHtml(note.message)}</div>
@@ -520,9 +716,12 @@
             const reader = new FileReader();
             reader.onload = (e) => {
                 try {
-                    const jsonData = XLSX.utils.sheet_to_json(XLSX.read(new Uint8Array(e.target.result), {type: 'array'}).Sheets['Foglio1']);
+                    const workbook = XLSX.read(new Uint8Array(e.target.result), {type: 'array'});
+                    const jsonData = XLSX.utils.sheet_to_json(workbook.Sheets['Foglio1']);
                     const clientsData = jsonData.filter(row => Object.values(row).some(v => v));
+                    
                     if (!clientsData.length) throw new Error("Nessun dato valido nel file");
+                    
                     agenciesData = Object.values(clientsData.reduce((acc, row) => {
                         const name = row['Ragione sociale'];
                         if (!name) return acc;
@@ -532,7 +731,10 @@
                             consultEditoriale: row['Nome Consulente Editoriale'], 
                             consultRete: row['Nome Consulente'], 
                             teamManager: row['Team Manager'] || row['Team'] || '', 
-                            documents: [], totalDebt: 0, totalInsoluti: 0, totalPromesse: 0, 
+                            documents: [], 
+                            totalDebt: 0, 
+                            totalInsoluti: 0, 
+                            totalPromesse: 0, 
                             status: row['Sieweb'] 
                         };
                         const doc = {
@@ -548,26 +750,46 @@
                         acc[name].totalPromesse += parseFloat(row['Cifra promessa']) || 0;
                         return acc;
                     }, {}));
+                    
                     agenciesData.forEach(agency => {
                         if (!paymentStatuses[agency.name]) paymentStatuses[agency.name] = 'rid';
                         if (!agencyStatuses[agency.name]) agencyStatuses[agency.name] = 'attivo-pagato';
                     });
+                    
                     fileInfo = { name: file.name, loadTime: new Date().toLocaleString('it-IT') };
                     filteredAgencies = [...agenciesData];
                     UI.setupUI();
                     FB.saveAll();
                     document.getElementById('fileStatus').textContent = `✅ ${agenciesData.length} agenzie caricate.`;
-                } catch (err) { document.getElementById('fileStatus').textContent = `❌ ${err.message}`; }
+                } catch (err) { 
+                    console.error('Errore processamento file:', err);
+                    document.getElementById('fileStatus').textContent = `❌ ${err.message}`; 
+                }
             };
             reader.readAsArrayBuffer(file);
         }
 
         function applyFilters() {
-            const S = Object.fromEntries(['searchInput','consultEditoriale','consultRete','teamManager','affiliatoFilter','paymentStatus','agencyStatusFilter'].map(id=>[id, document.getElementById(id).value]));
+            const getValue = (id) => {
+                const el = document.getElementById(id);
+                return el ? el.value : '';
+            };
+            
+            const S = {
+                searchInput: getValue('searchInput'),
+                consultEditoriale: getValue('consultEditoriale'),
+                consultRete: getValue('consultRete'),
+                teamManager: getValue('teamManager'),
+                affiliatoFilter: getValue('affiliatoFilter'),
+                paymentStatus: getValue('paymentStatus'),
+                agencyStatusFilter: getValue('agencyStatusFilter')
+            };
+            
             filteredAgencies = agenciesData.filter(agency => {
                 const agencyData = editableData[agency.name] || {};
                 const teamManager = agency.teamManager || agencyData.teamManager || '';
                 const searchString = `${agency.name} ${agency.bdti} ${agency.consultEditoriale} ${agency.consultRete} ${teamManager} ${agencyData.affiliato}`.toLowerCase();
+                
                 return (!S.searchInput || searchString.includes(S.searchInput.toLowerCase())) &&
                        (!S.consultEditoriale || agency.consultEditoriale === S.consultEditoriale) &&
                        (!S.consultRete || agency.consultRete === S.consultRete) &&
@@ -576,22 +798,37 @@
                        (!S.paymentStatus || (paymentStatuses[agency.name] || 'rid') === S.paymentStatus) &&
                        (!S.agencyStatusFilter || (agencyStatuses[agency.name] || 'attivo-pagato') === S.agencyStatusFilter);
             });
+            
             document.getElementById('filterReset').style.display = Object.values(S).some(v => v) ? 'flex' : 'none';
-            UI.displayStats(); UI.displayRoleStats(); UI.displayAgencies(); UI.displayNotesSummary();
+            UI.displayStats(); 
+            UI.displayRoleStats(); 
+            UI.displayAgencies(); 
+            UI.displayNotesSummary();
         }
 
-        function resetFilters() { ['searchInput','consultEditoriale','consultRete','teamManager','affiliatoFilter','paymentStatus','agencyStatusFilter'].forEach(id => document.getElementById(id).value = ''); applyFilters(); }
+        function resetFilters() { 
+            ['searchInput','consultEditoriale','consultRete','teamManager','affiliatoFilter','paymentStatus','agencyStatusFilter'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.value = '';
+            }); 
+            applyFilters(); 
+        }
         
         function showAgencyDetails(agency) {
             document.getElementById('modalTitle').textContent = agency.name;
-            const modalBody = document.getElementById('modalBody'), agencyData = editableData[agency.name] || {}, currentStatus = agencyStatuses[agency.name] || 'attivo-pagato';
+            const modalBody = document.getElementById('modalBody');
+            const agencyData = editableData[agency.name] || {};
+            const currentStatus = agencyStatuses[agency.name] || 'attivo-pagato';
             const safeAgencyId = F.createSafeSelector(agency.name);
+            
             modalBody.innerHTML = `
-                <div class="modal-section"><div class="status-buttons">
-                    <button class="status-btn attivo-pagato ${currentStatus === 'attivo-pagato' ? 'active' : ''}" onclick="updateAgencyStatus('${F.escapeHtml(agency.name)}', 'attivo-pagato', this)">🟢 ATTIVO PAGATO</button>
-                    <button class="status-btn attivo-promessa ${currentStatus === 'attivo-promessa' ? 'active' : ''}" onclick="updateAgencyStatus('${F.escapeHtml(agency.name)}', 'attivo-promessa', this)">🟠 ATTIVO PROMESSA</button>
-                    <button class="status-btn sospeso-insoluto ${currentStatus === 'sospeso-insoluto' ? 'active' : ''}" onclick="updateAgencyStatus('${F.escapeHtml(agency.name)}', 'sospeso-insoluto', this)">🔴 SOSPESO INSOLUTO</button>
-                </div></div>
+                <div class="modal-section">
+                    <div class="status-buttons">
+                        <button class="status-btn attivo-pagato ${currentStatus === 'attivo-pagato' ? 'active' : ''}" onclick="updateAgencyStatus('${F.escapeHtml(agency.name)}', 'attivo-pagato', this); event.stopPropagation();">🟢 ATTIVO PAGATO</button>
+                        <button class="status-btn attivo-promessa ${currentStatus === 'attivo-promessa' ? 'active' : ''}" onclick="updateAgencyStatus('${F.escapeHtml(agency.name)}', 'attivo-promessa', this); event.stopPropagation();">🟠 ATTIVO PROMESSA</button>
+                        <button class="status-btn sospeso-insoluto ${currentStatus === 'sospeso-insoluto' ? 'active' : ''}" onclick="updateAgencyStatus('${F.escapeHtml(agency.name)}', 'sospeso-insoluto', this); event.stopPropagation();">🔴 SOSPESO INSOLUTO</button>
+                    </div>
+                </div>
 
                 <div class="modal-section">
                     <h3 class="modal-section-title">Informazioni Aggiuntive</h3>
@@ -607,6 +844,7 @@
                         <button class="tab active" onclick="showTab(this, 'riepilogo_${safeAgencyId}')">Riepilogo</button>
                         <button class="tab" onclick="showTab(this, 'documenti_${safeAgencyId}')">Documenti (${agency.documents.length})</button>
                         <button class="tab" onclick="showTab(this, 'note_${safeAgencyId}')">Note</button>
+                        <button class="tab" onclick="showTab(this, 'contratto_${safeAgencyId}')">Contratto ADV</button>
                     </div>
 
                     <div id="riepilogo_${safeAgencyId}" class="tab-content active">
@@ -625,11 +863,38 @@
                         <div class="notes-history-list" style="max-height: 150px;" id="riepilogo_notes_${safeAgencyId}">${UI.displayNotesHistory(agency.name, true)}</div>
                     </div>
 
-                    <div id="documenti_${safeAgencyId}" class="tab-content">${agency.documents.map(doc => `<div class="document-item"><div class="document-header"><div class="document-title">Doc. ${doc['Documento']||'N/A'}</div><div class="document-amount">€${(parseFloat(doc['INSOLUTI'])||0).toLocaleString('it-IT',{minimumFractionDigits:2})}</div></div><div class="document-details">Data: ${doc['Data Documento']||'N/A'} | Scadenza: ${doc['Data Scadenza']||'N/A'}</div></div>`).join('')}</div>
+                    <div id="documenti_${safeAgencyId}" class="tab-content">
+                        ${agency.documents.map(doc => `
+                            <div class="document-item">
+                                <div class="document-header">
+                                    <div class="document-title">Doc. ${doc['Documento']||'N/A'}</div>
+                                    <div class="document-amount">€${(parseFloat(doc['INSOLUTI'])||0).toLocaleString('it-IT',{minimumFractionDigits:2})}</div>
+                                </div>
+                                <div class="document-details">Data: ${doc['Data Documento']||'N/A'} | Scadenza: ${doc['Data Scadenza']||'N/A'}</div>
+                            </div>
+                        `).join('')}
+                    </div>
                     
                     <div id="note_${safeAgencyId}" class="tab-content" data-agency-name="${F.escapeHtml(agency.name)}">
                         <h3 class="modal-section-title">Nuova Nota</h3>
                         <div class="note-form">
+                            <div class="note-category">
+                                <label>Categoria Nota</label>
+                                <div class="note-category-options">
+                                    <div class="note-category-option">
+                                        <input type="radio" id="cat_amm_${safeAgencyId}" name="category_${safeAgencyId}" value="amministrazione">
+                                        <label for="cat_amm_${safeAgencyId}">📋 Amministrazione</label>
+                                    </div>
+                                    <div class="note-category-option">
+                                        <input type="radio" id="cat_contr_${safeAgencyId}" name="category_${safeAgencyId}" value="contratti">
+                                        <label for="cat_contr_${safeAgencyId}">📄 Contratti</label>
+                                    </div>
+                                    <div class="note-category-option">
+                                        <input type="radio" id="cat_altro_${safeAgencyId}" name="category_${safeAgencyId}" value="altro" checked>
+                                        <label for="cat_altro_${safeAgencyId}">📌 Altro</label>
+                                    </div>
+                                </div>
+                            </div>
                             <textarea class="notes-textarea" id="note_text_${safeAgencyId}" placeholder="Aggiungi una nota..."></textarea>
                             <div class="due-date-group">
                                 <label for="scadenza_${safeAgencyId}">Data di Scadenza</label>
@@ -645,8 +910,27 @@
                         <h3 class="modal-section-title" style="margin-top:24px;">Cronologia Note</h3>
                         <div class="notes-history-list" id="notes_history_${safeAgencyId}">${UI.displayNotesHistory(agency.name, false)}</div>
                     </div>
+                    
+                    <div id="contratto_${safeAgencyId}" class="tab-content" data-agency-name="${F.escapeHtml(agency.name)}">
+                        <div class="contract-year-selector">
+                            <label for="contract_year_${safeAgencyId}">Anno Contratto</label>
+                            <select id="contract_year_${safeAgencyId}" class="contact-input" onchange="loadContractStatus('${F.escapeHtml(agency.name)}')">
+                                <option value="2024">2024</option>
+                                <option value="2025" ${new Date().getFullYear() === 2025 ? 'selected' : ''}>2025</option>
+                                <option value="2026" ${new Date().getFullYear() === 2026 ? 'selected' : ''}>2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                            </select>
+                        </div>
+                        <h3 class="modal-section-title">Stato Contratto</h3>
+                        <div class="status-buttons" id="contract_status_buttons_${safeAgencyId}">
+                            <!-- Buttons will be populated by loadContractStatus -->
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-section"><h3 class="modal-section-title">Genera Messaggi</h3>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Genera Messaggi</h3>
                     <div class="message-buttons">
                         <button class="message-btn" onclick="generateMessage('${F.escapeHtml(agency.name)}', 'situazione')">📊 Situazione Debitoria</button>
                         <button class="message-btn" onclick="generateMessage('${F.escapeHtml(agency.name)}', 'sollecito')">⚠️ Sollecito Sospensione</button>
@@ -654,8 +938,11 @@
                     </div>
                     <div class="message-preview" id="messagePreview_${safeAgencyId}" style="display:none;"></div>
                     <button class="btn-primary" id="copyMessageBtn_${safeAgencyId}" style="display:none; margin-top: 12px;" onclick="copyMessage('${F.escapeHtml(agency.name)}')">Copia Messaggio</button>
-                </div>`;
+                </div>
+            `;
+            
             document.getElementById('agencyModal').style.display = 'block';
+            loadContractStatus(agency.name);
         }
         
         // GLOBAL FUNCTIONS
@@ -664,20 +951,19 @@
             const originalText = saveBtn.innerHTML;
             
             try {
-                // Mostra stato di salvataggio
                 saveBtn.innerHTML = '⏳ Salvando...';
                 saveBtn.disabled = true;
                 saveBtn.style.opacity = '0.6';
                 
                 F.updateSyncStatus('connecting', '🔄 Salvando dati su Firebase...');
                 
-                // Salva tutti i dati su Firebase
                 const savePromises = [
                     FB.save('agenciesData', agenciesData),
                     FB.save('editableData', editableData),
                     FB.save('paymentStatuses', paymentStatuses),
                     FB.save('agencyStatuses', agencyStatuses),
                     FB.save('communicationsHistory', communicationsHistory),
+                    FB.save('contractStatuses', contractStatuses),
                     FB.save('fileInfo', fileInfo)
                 ];
                 
@@ -685,7 +971,6 @@
                 const allSaved = results.every(result => result === true);
                 
                 if (allSaved) {
-                    // Successo
                     saveBtn.innerHTML = '✅ Salvato!';
                     saveBtn.style.background = '#34c759';
                     saveBtn.style.color = 'white';
@@ -695,7 +980,6 @@
                     lastSyncTime = new Date().toLocaleString('it-IT');
                     UI.updateFileInfo();
                     
-                    // Ripristina il pulsante dopo 2 secondi
                     setTimeout(() => {
                         saveBtn.innerHTML = originalText;
                         saveBtn.style.background = '';
@@ -709,7 +993,6 @@
                 }
                 
             } catch (error) {
-                // Errore
                 console.error('Errore salvataggio Firebase:', error);
                 saveBtn.innerHTML = '❌ Errore!';
                 saveBtn.style.background = '#ff3b30';
@@ -717,7 +1000,6 @@
                 F.updateSyncStatus('error', '❌ Errore nel salvataggio');
                 F.showToast('❌ Errore durante il salvataggio');
                 
-                // Ripristina il pulsante dopo 3 secondi
                 setTimeout(() => {
                     saveBtn.innerHTML = originalText;
                     saveBtn.style.background = '';
@@ -727,17 +1009,19 @@
                 }, 3000);
             }
         };
-        window.updatePaymentStatus = (agencyName, status) => { paymentStatuses[agencyName] = status; FB.save('paymentStatuses', paymentStatuses).then(() => applyFilters()); };
+        
+        window.updatePaymentStatus = (agencyName, status) => { 
+            paymentStatuses[agencyName] = status; 
+            FB.save('paymentStatuses', paymentStatuses).then(() => applyFilters()); 
+        };
+        
         window.updateAgencyStatus = async (agencyName, status, btn) => { 
             agencyStatuses[agencyName] = status; 
             const success = await FB.save('agencyStatuses', agencyStatuses);
             if (success) {
                 btn.parentElement.querySelectorAll('.status-btn').forEach(b => b.classList.remove('active')); 
                 btn.classList.add('active'); 
-                
-                // Aggiorna immediatamente lo stato sulla card esterna PRIMA di applyFilters
                 updateExternalCardStatus(agencyName, status);
-                
                 F.showToast('✅ Stato salvato correttamente');
             } else {
                 F.showToast('❌ Errore nel salvataggio dello stato');
@@ -745,41 +1029,32 @@
         };
         
         function updateExternalCardStatus(agencyName, status) {
-            // Trova la card corrispondente nel DOM
             const agencyCards = document.querySelectorAll('.agency-card');
             agencyCards.forEach(card => {
                 const cardTitleElement = card.querySelector('.agency-name');
                 if (cardTitleElement && cardTitleElement.textContent.trim() === agencyName) {
-                    // Trova il primo badge di stato nella card
                     const statusBadges = card.querySelector('.status-badges');
                     if (statusBadges) {
                         const firstBadge = statusBadges.querySelector('.status-badge:first-child');
                         if (firstBadge) {
-                            // Rimuovi tutte le classi di stato precedenti
                             firstBadge.className = 'status-badge';
-                            
-                            // Aggiungi la nuova classe di stato
-                            const statusClass = status.split('-')[0]; // attivo o sospeso
+                            const statusClass = status.split('-')[0];
                             firstBadge.classList.add(statusClass);
-                            
-                            // Aggiorna il testo del badge
                             const statusText = {
                                 'attivo-pagato': 'ATTIVO PAGATO',
                                 'attivo-promessa': 'ATTIVO PROMESSA', 
                                 'sospeso-insoluto': 'SOSPESO INSOLUTO'
                             }[status] || 'ATTIVO';
-                            
                             firstBadge.textContent = statusText;
                         }
                     }
-                    
-                    // Aggiorna anche la classe CSS della card per i colori del bordo
                     card.classList.remove('payment-rid', 'payment-bonifico', 'payment-promessi', 'payment-sospeso');
                     const paymentStatus = paymentStatuses[agencyName] || 'rid';
                     card.classList.add(`payment-${paymentStatus}`);
                 }
             });
         }
+        
         window.updateContactData = async (agencyName) => { 
             if (!editableData[agencyName]) editableData[agencyName] = {};
             const safeAgencyId = F.createSafeSelector(agencyName);
@@ -788,12 +1063,10 @@
             editableData[agencyName].telefono = document.getElementById(`telefono_${safeAgencyId}`).value;
             const success = await FB.save('editableData', editableData);
             if (success) {
-                // Aggiorna il riepilogo in tempo reale
                 const riepilogoContainer = document.getElementById(`riepilogo_${safeAgencyId}`);
                 if (riepilogoContainer) {
                     const summaryGrid = riepilogoContainer.querySelector('.summary-grid');
                     if (summaryGrid) {
-                        // Aggiorna i valori nel riepilogo
                         const summaryItems = summaryGrid.querySelectorAll('.summary-item');
                         summaryItems.forEach(item => {
                             const label = item.querySelector('.summary-label').textContent.trim();
@@ -808,8 +1081,8 @@
                         });
                     }
                 }
-                populateFilters(); // Ricarica i filtri per mostrare i nuovi dati
-                applyFilters(); // Riapplica i filtri
+                populateFilters();
+                applyFilters();
                 F.showToast('✅ Dati salvati correttamente');
             } else {
                 F.showToast('❌ Errore nel salvataggio');
@@ -820,20 +1093,32 @@
             const safeAgencyId = F.createSafeSelector(agencyName);
             const noteText = document.getElementById(`note_text_${safeAgencyId}`).value.trim();
             if (!noteText) return F.showToast('⚠️ Inserisci una nota');
+            
+            const categoryRadios = document.getElementsByName(`category_${safeAgencyId}`);
+            let selectedCategory = 'altro';
+            for (const radio of categoryRadios) {
+                if (radio.checked) {
+                    selectedCategory = radio.value;
+                    break;
+                }
+            }
+            
             const newNote = {
                 message: noteText,
                 timestamp: new Date().toLocaleString('it-IT'),
                 scadenza: document.getElementById(`scadenza_${safeAgencyId}`).value,
+                category: selectedCategory,
                 channels: {
                     whatsapp: document.getElementById(`channel_whatsapp_${safeAgencyId}`).checked,
                     mail: document.getElementById(`channel_mail_${safeAgencyId}`).checked,
                     voce: document.getElementById(`channel_voce_${safeAgencyId}`).checked
                 }
             };
+            
             if (!communicationsHistory[agencyName]) communicationsHistory[agencyName] = [];
             communicationsHistory[agencyName].unshift(newNote); 
+            
             FB.save('communicationsHistory', communicationsHistory).then(() => {
-                // Aggiorna entrambe le sezioni note
                 const notesHistoryContainer = document.getElementById(`notes_history_${safeAgencyId}`);
                 if (notesHistoryContainer) {
                     notesHistoryContainer.innerHTML = UI.displayNotesHistory(agencyName, false);
@@ -844,6 +1129,7 @@
                 }
                 UI.displayNotesSummary();
                 document.getElementById(`note_text_${safeAgencyId}`).value = '';
+                document.getElementById(`cat_altro_${safeAgencyId}`).checked = true;
                 F.showToast('✅ Nota salvata con successo');
             });
         };
@@ -856,7 +1142,6 @@
                 const success = await FB.save('communicationsHistory', communicationsHistory);
                 if (success) {
                     const safeAgencyId = F.createSafeSelector(agencyName);
-                    // Aggiorna entrambe le sezioni note
                     const notesHistoryContainer = document.getElementById(`notes_history_${safeAgencyId}`);
                     if (notesHistoryContainer) {
                         notesHistoryContainer.innerHTML = UI.displayNotesHistory(agencyName, false);
@@ -888,15 +1173,26 @@
             }
         };
 
-        window.showTab = (btn, tabId) => { const p = btn.closest('.modal-section'); p.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); btn.classList.add('active'); p.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active')); document.getElementById(tabId).classList.add('active'); };
+        window.showTab = (btn, tabId) => { 
+            const p = btn.closest('.modal-section'); 
+            p.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); 
+            btn.classList.add('active'); 
+            p.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active')); 
+            document.getElementById(tabId).classList.add('active'); 
+        };
+        
         window.generateMessage = (agencyName, type) => {
-            const agency = agenciesData.find(a => a.name === agencyName); if (!agency) return;
+            const agency = agenciesData.find(a => a.name === agencyName); 
+            if (!agency) return;
+            
             let documentsText = agency.documents.map(doc => `• Doc. ${doc['Documento'] || 'N/A'} del ${doc['Data Documento'] || 'N/A'} - € ${(parseFloat(doc['DEBITO']) || 0).toLocaleString('it-IT')}`).join('\n');
+            
             const messages = {
                 situazione: `${agency.bdti} ${agency.name},\nti inoltro la Tua situazione aggiornata:\n\n**INSOLUTO ATTUALE (${new Date().toLocaleDateString('it-IT')}):\n• Debito totale: €${agency.totalDebt.toLocaleString('it-IT')}\n• Insoluti: €${agency.totalInsoluti.toLocaleString('it-IT')}**\n\nSCADENZE:\n${documentsText}\n\nFammi sapere!!\nGrazie e buon lavoro.`,
                 sollecito: `Ciao l'amministrazione ti ha scritto in merito all'insoluto una mail con il dettaglio del dovuto\n*Cliente:* ${agency.name}\n*Codice BDTI:* ${agency.bdti}\n*Dettaglio documenti scaduti:*\n${documentsText}\n*TOTALE DEBITO: € ${agency.totalDebt.toLocaleString('it-IT')}*\nMi fai sapere come regolarci per il saldo!! Se non mi dai riscontro a breve scatta la sospensione definitiva.\nGrazie e buon lavoro.`,
                 sospensione: `Ciao *Cliente:* ${agency.name}\n*Codice BDTI:* ${agency.bdti}\n*Dettaglio documenti scaduti:*\n${documentsText}\n*TOTALE DEBITO: € ${agency.totalDebt.toLocaleString('it-IT')}*\nTi Informo del saldo e che non avendo ricevuto riscontro sei stato SOSPESO da ADV.\nResto a Tua disposizione per qualsiasi ulteriore informazione e per concordare il rientro del dovuto.\nGrazie e buon lavoro.`
             };
+            
             const safeAgencyId = F.createSafeSelector(agencyName);
             const preview = document.getElementById(`messagePreview_${safeAgencyId}`);
             const copyBtn = document.getElementById(`copyMessageBtn_${safeAgencyId}`);
@@ -904,14 +1200,17 @@
             preview.style.display = 'block';
             copyBtn.style.display = 'block';
         };
+        
         window.copyMessage = (agencyName) => {
             const safeAgencyId = F.createSafeSelector(agencyName);
             const textToCopy = document.getElementById(`messagePreview_${safeAgencyId}`).textContent;
             navigator.clipboard.writeText(textToCopy).then(() => F.showToast('✅ Messaggio copiato!'));
         };
+        
         window.exportRoleStats = () => {
             const dataToExport = filteredAgencies.length > 0 ? filteredAgencies : agenciesData;
             if (dataToExport.length === 0) return F.showToast('⚠️ Nessun dato da esportare');
+            
             const headers = "Ragione Sociale;Codice BDTI;Consulente Editoriale;Consulente di Rete;Team Manager;Importo Insoluto\n";
             let total = 0;
             const rows = dataToExport.filter(a => a.totalInsoluti > 0).map(agency => {
@@ -922,29 +1221,38 @@
             const footer = `\n;;;;TOTALE GENERALE;${total.toFixed(2).replace('.',',')}`;
             F.downloadCSV(headers + rows.join('\n') + footer, `dettaglio_insoluti.csv`);
         };
+        
         window.exportSospesi = () => {
             const dataToExport = filteredAgencies.length > 0 ? filteredAgencies : agenciesData;
             const sospesi = dataToExport.filter(a => paymentStatuses[a.name] === 'sospeso');
             if (sospesi.length === 0) return F.showToast('⚠️ Nessuna agenzia sospesa da esportare');
+            
             let csv = "Ragione Sociale;BDTI;Insoluto\n";
             sospesi.forEach(a => { csv += `"${a.name}";"${a.bdti}";"${a.totalInsoluti.toFixed(2).replace('.',',')}"\n`; });
             F.downloadCSV(csv, 'agenzie_sospese.csv');
         };
+        
         window.exportPromesse = () => {
             const dataToExport = filteredAgencies.length > 0 ? filteredAgencies : agenciesData;
             const promesse = dataToExport.filter(a => paymentStatuses[a.name] === 'promessi');
             if (promesse.length === 0) return F.showToast('⚠️ Nessuna agenzia con promesse da esportare');
+            
             let csv = "Ragione Sociale;BDTI;Insoluto\n";
             promesse.forEach(a => { csv += `"${a.name}";"${a.bdti}";"${a.totalInsoluti.toFixed(2).replace('.',',')}"\n`; });
             F.downloadCSV(csv, 'agenzie_promesse.csv');
         };
+        
         window.showNotesListModal = () => {
             const modal = document.getElementById('notesListModal');
             const body = document.getElementById('notesListModalBody');
             let allNotes = [];
+            
             Object.entries(communicationsHistory).forEach(([agencyName, notes]) => {
-                notes.forEach(note => { if(note.scadenza) allNotes.push({ agencyName, ...note }); });
+                notes.forEach(note => { 
+                    if(note.scadenza) allNotes.push({ agencyName, ...note }); 
+                });
             });
+            
             allNotes.sort((a, b) => new Date(a.scadenza) - new Date(b.scadenza));
             
             if (allNotes.length === 0) {
@@ -962,10 +1270,17 @@
             }
             modal.style.display = 'block';
         };
+        
+        window.filterByPaymentStatus = (status) => {
+            document.getElementById('paymentStatus').value = status;
+            applyFilters();
+        };
+        
         window.manualSync = () => { FB.saveAll(); };
         window.closeModal = () => document.getElementById('agencyModal').style.display = 'none';
         window.closeNotesModal = () => document.getElementById('notesListModal').style.display = 'none';
         window.resetFilters = resetFilters;
+        
         window.openAgencyFromNote = (agencyName) => {
             closeNotesModal();
             const agency = agenciesData.find(a => a.name === agencyName);
@@ -975,36 +1290,72 @@
         // APP INITIALIZATION
         document.addEventListener('DOMContentLoaded', async () => {
             F.updateSyncStatus('connecting', '🔄 Inizializzazione...');
+            
             const firebaseReadyPromise = new Promise(resolve => {
                 if(window.firebaseReady) resolve(true);
                 else window.addEventListener('firebaseready', () => resolve(true));
             });
+            
             firebaseReady = await firebaseReadyPromise;
 
-            if (!firebaseReady) { F.updateSyncStatus('error', '❌ Connessione a Firebase fallita'); return; }
+            if (!firebaseReady) { 
+                F.updateSyncStatus('error', '❌ Connessione a Firebase fallita'); 
+                return; 
+            }
 
             try {
                 F.updateSyncStatus('connected', '🔥 Connesso. Carico dati...');
-                const dataMap = await Promise.all([FB.load('agenciesData'), FB.load('editableData'), FB.load('paymentStatuses'), FB.load('agencyStatuses'), FB.load('communicationsHistory'), FB.load('fileInfo')]);
-                [agenciesData, editableData, paymentStatuses, agencyStatuses, communicationsHistory, fileInfo] = dataMap.map(d => d || (d === null ? {} : (Array.isArray(d) ? [] : d)));
+                
+                const dataMap = await Promise.all([
+                    FB.load('agenciesData'), 
+                    FB.load('editableData'), 
+                    FB.load('paymentStatuses'), 
+                    FB.load('agencyStatuses'), 
+                    FB.load('communicationsHistory'), 
+                    FB.load('contractStatuses'), 
+                    FB.load('fileInfo')
+                ]);
+                
+                [agenciesData, editableData, paymentStatuses, agencyStatuses, communicationsHistory, contractStatuses, fileInfo] = dataMap.map((d, index) => {
+                    if (d === null) {
+                        if (index === 0) return []; // agenciesData
+                        return {}; // tutti gli altri oggetti
+                    }
+                    return d || (index === 0 ? [] : {});
+                });
                 
                 if (agenciesData && agenciesData.length > 0) {
                     filteredAgencies = [...agenciesData];
                     lastSyncTime = new Date().toLocaleString('it-IT');
                     UI.setupUI();
                     UI.updateFileInfo();
-                    F.updateSyncStatus('connected', `✅ Dati aggiornati da Firebase`);
+                    F.updateSyncStatus('connected', `✅ Dati caricati da Firebase (${agenciesData.length} agenzie)`);
                 } else {
-                    F.updateSyncStatus('connected', '🔥 Pronto. Carica un file Excel.');
+                    F.updateSyncStatus('connected', '🔥 Pronto. Carica un file Excel per iniziare.');
+                    const loadingMsg = document.getElementById('initial-loading-message');
+                    if (loadingMsg) {
+                        loadingMsg.innerHTML = '<h3>📁 Nessun dato presente</h3><p>Clicca su "Carica Foglio Excel" per iniziare</p>';
+                    }
                 }
             } catch (error) {
                 console.error("Errore nel caricamento dati:", error);
                 F.updateSyncStatus('error', '❌ Errore caricamento dati.');
             }
             
-            ['consultEditoriale','consultRete','teamManager','affiliatoFilter','paymentStatus','agencyStatusFilter'].forEach(id => document.getElementById(id).addEventListener('change', applyFilters));
-            document.getElementById('searchInput').addEventListener('input', applyFilters);
-            document.getElementById('fileInput').addEventListener('change', (e) => e.target.files[0] && processFile(e.target.files[0]));
+            // Setup event listeners
+            const filterIds = ['consultEditoriale','consultRete','teamManager','affiliatoFilter','paymentStatus','agencyStatusFilter'];
+            filterIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.addEventListener('change', applyFilters);
+            });
+            
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) searchInput.addEventListener('input', applyFilters);
+            
+            const fileInput = document.getElementById('fileInput');
+            if (fileInput) fileInput.addEventListener('change', (e) => {
+                if (e.target.files[0]) processFile(e.target.files[0]);
+            });
         });
     </script>
 </body>

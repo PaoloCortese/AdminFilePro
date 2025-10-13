@@ -334,6 +334,16 @@
         </div>
     </div>
     
+    <div id="contractListModal" class="modal">
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h2 id="contractListTitle" class="modal-title">📄 Elenco Contratti</h2>
+                <button class="close-modal" onclick="closeContractModal()">&times;</button>
+            </div>
+            <div id="contractListModalBody" class="modal-body"></div>
+        </div>
+    </div>
+    
     <script>
         // GLOBAL STATE & UTILITIES
         let agenciesData = [], editableData = {}, paymentStatuses = {}, agencyStatuses = {}, communicationsHistory = {}, contractStatuses = {};
@@ -544,9 +554,9 @@
                 }, {});
                 
                 document.querySelector('.stats-contracts').innerHTML = `
-                    <div class="stat-card"><div class="stat-label">Contratti Compilati</div><div class="stat-number" style="color: #f9a825;">${contractStats.compilato || 0}</div></div>
-                    <div class="stat-card"><div class="stat-label">Contratti Inviati</div><div class="stat-number warning">${contractStats.inviato || 0}</div></div>
-                    <div class="stat-card"><div class="stat-label">Contratti Firmati + Lavorati</div><div class="stat-number success">${(contractStats.firmato || 0) + (contractStats.lavorato || 0)}</div></div>
+                    <div class="stat-card" onclick="filterByContractStatus('compilato')"><div class="stat-label">Contratti Compilati</div><div class="stat-number" style="color: #f9a825;">${contractStats.compilato || 0}</div></div>
+                    <div class="stat-card" onclick="filterByContractStatus('inviato')"><div class="stat-label">Contratti Inviati</div><div class="stat-number warning">${contractStats.inviato || 0}</div></div>
+                    <div class="stat-card" onclick="filterByContractStatus('firmato-lavorato')"><div class="stat-label">Contratti Firmati + Lavorati</div><div class="stat-number success">${(contractStats.firmato || 0) + (contractStats.lavorato || 0)}</div></div>
                 `;
             },
             displayRoleStats: () => {
@@ -935,6 +945,7 @@
                         <button class="message-btn" onclick="generateMessage('${F.escapeHtml(agency.name)}', 'situazione')">📊 Situazione Debitoria</button>
                         <button class="message-btn" onclick="generateMessage('${F.escapeHtml(agency.name)}', 'sollecito')">⚠️ Sollecito Sospensione</button>
                         <button class="message-btn" onclick="generateMessage('${F.escapeHtml(agency.name)}', 'sospensione')">🚫 Sospensione</button>
+                        <button class="message-btn" onclick="generateMessage('${F.escapeHtml(agency.name)}', 'firmacontratto')">✍️ Firma Contratto</button>
                     </div>
                     <div class="message-preview" id="messagePreview_${safeAgencyId}" style="display:none;"></div>
                     <button class="btn-primary" id="copyMessageBtn_${safeAgencyId}" style="display:none; margin-top: 12px;" onclick="copyMessage('${F.escapeHtml(agency.name)}')">Copia Messaggio</button>
@@ -1190,7 +1201,8 @@
             const messages = {
                 situazione: `${agency.bdti} ${agency.name},\nti inoltro la Tua situazione aggiornata:\n\n**INSOLUTO ATTUALE (${new Date().toLocaleDateString('it-IT')}):\n• Debito totale: €${agency.totalDebt.toLocaleString('it-IT')}\n• Insoluti: €${agency.totalInsoluti.toLocaleString('it-IT')}**\n\nSCADENZE:\n${documentsText}\n\nFammi sapere!!\nGrazie e buon lavoro.`,
                 sollecito: `Ciao l'amministrazione ti ha scritto in merito all'insoluto una mail con il dettaglio del dovuto\n*Cliente:* ${agency.name}\n*Codice BDTI:* ${agency.bdti}\n*Dettaglio documenti scaduti:*\n${documentsText}\n*TOTALE DEBITO: € ${agency.totalDebt.toLocaleString('it-IT')}*\nMi fai sapere come regolarci per il saldo!! Se non mi dai riscontro a breve scatta la sospensione definitiva.\nGrazie e buon lavoro.`,
-                sospensione: `Ciao *Cliente:* ${agency.name}\n*Codice BDTI:* ${agency.bdti}\n*Dettaglio documenti scaduti:*\n${documentsText}\n*TOTALE DEBITO: € ${agency.totalDebt.toLocaleString('it-IT')}*\nTi Informo del saldo e che non avendo ricevuto riscontro sei stato SOSPESO da ADV.\nResto a Tua disposizione per qualsiasi ulteriore informazione e per concordare il rientro del dovuto.\nGrazie e buon lavoro.`
+                sospensione: `Ciao *Cliente:* ${agency.name}\n*Codice BDTI:* ${agency.bdti}\n*Dettaglio documenti scaduti:*\n${documentsText}\n*TOTALE DEBITO: € ${agency.totalDebt.toLocaleString('it-IT')}*\nTi Informo del saldo e che non avendo ricevuto riscontro sei stato SOSPESO da ADV.\nResto a Tua disposizione per qualsiasi ulteriore informazione e per concordare il rientro del dovuto.\nGrazie e buon lavoro.`,
+                firmacontratto: `Ciao ${agency.name},\n*Codice BDTI:* ${agency.bdti}\n\nTi ho inviato il contratto, se hai problemi sentiamoci, se riesci firma quanto prima.\n\nGrazie 🙏`
             };
             
             const safeAgencyId = F.createSafeSelector(agencyName);
@@ -1275,6 +1287,70 @@
             document.getElementById('paymentStatus').value = status;
             applyFilters();
         };
+        
+        window.filterByContractStatus = (status) => {
+            const modal = document.getElementById('contractListModal');
+            const body = document.getElementById('contractListModalBody');
+            const titleElement = document.getElementById('contractListTitle');
+            const currentYear = new Date().getFullYear();
+            
+            // Filtra le agenzie per stato contratto
+            let filteredByContract = [];
+            let statusTitle = '';
+            
+            if (status === 'compilato') {
+                filteredByContract = agenciesData.filter(a => 
+                    contractStatuses[a.name] && 
+                    contractStatuses[a.name][currentYear] === 'compilato'
+                );
+                statusTitle = '🟡 Contratti Compilati';
+            } else if (status === 'inviato') {
+                filteredByContract = agenciesData.filter(a => 
+                    contractStatuses[a.name] && 
+                    contractStatuses[a.name][currentYear] === 'inviato'
+                );
+                statusTitle = '🟠 Contratti Inviati';
+            } else if (status === 'firmato-lavorato') {
+                filteredByContract = agenciesData.filter(a => 
+                    contractStatuses[a.name] && 
+                    (contractStatuses[a.name][currentYear] === 'firmato' || 
+                     contractStatuses[a.name][currentYear] === 'lavorato')
+                );
+                statusTitle = '🟢 Contratti Firmati e Lavorati';
+            }
+            
+            titleElement.innerHTML = `📄 ${statusTitle} - Anno ${currentYear}`;
+            
+            if (filteredByContract.length === 0) {
+                body.innerHTML = '<div class="empty-state"><h3>Nessuna agenzia trovata</h3><p>Nessun contratto con questo stato per l\'anno corrente</p></div>';
+            } else {
+                body.innerHTML = `<div style="padding: 8px;">
+                    <div style="margin-bottom: 16px; padding: 12px; background: #f0f0f5; border-radius: 10px;">
+                        <strong>Totale agenzie:</strong> ${filteredByContract.length}
+                    </div>
+                    ${filteredByContract.map(agency => {
+                        const contractStatus = contractStatuses[agency.name][currentYear];
+                        const statusEmoji = contractStatus === 'compilato' ? '🟡' : 
+                                          contractStatus === 'inviato' ? '🟠' : 
+                                          contractStatus === 'firmato' ? '🟢' : '🔵';
+                        return `<div class="document-item" style="cursor:pointer" onclick="closeContractModal(); showAgencyDetails(agenciesData.find(a => a.name === '${F.escapeHtml(agency.name)}'))">
+                            <div class="document-header">
+                                <div class="document-title">${F.escapeHtml(agency.name)}</div>
+                                <div style="font-weight:600;">${statusEmoji} ${contractStatus.toUpperCase()}</div>
+                            </div>
+                            <div class="document-details">
+                                <strong>BDTI:</strong> ${agency.bdti || 'N/A'} | 
+                                <strong>Insoluto:</strong> €${agency.totalInsoluti.toLocaleString('it-IT', {minimumFractionDigits: 2})}
+                            </div>
+                        </div>`;
+                    }).join('')}
+                </div>`;
+            }
+            
+            modal.style.display = 'block';
+        };
+        
+        window.closeContractModal = () => document.getElementById('contractListModal').style.display = 'none';
         
         window.manualSync = () => { FB.saveAll(); };
         window.closeModal = () => document.getElementById('agencyModal').style.display = 'none';
